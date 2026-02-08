@@ -3,8 +3,9 @@
    ========================================= */
 :root {
     /* Core Backgrounds */
-    --bg-black: #050505;       /* Pitch Black */
-    
+    --bg-black: #050505;
+    /* Pitch Black */
+
     /* Text Colors */
     --text-main: #ffffff;
     --text-muted: #a1a1a1;
@@ -15,7 +16,8 @@
     --neon-pink: #ff4081;
     --neon-blue: #00e5ff;
     --neon-green: #ccff00;
-    --neon-red: #ff3d00;       /* Added for Feature 05 */
+    --neon-red: #ff3d00;
+    /* Added for Feature 05 */
 }
 
 * {
@@ -36,17 +38,31 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, .logo, .tagline, .btn-solid, .giant-num {
+h1,
+h2,
+h3,
+.logo,
+.tagline,
+.btn-solid,
+.giant-num {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
 
 /* Layout Utility */
 .container {
-    max-width: 1200px; /* Slightly wider to accommodate 3 cards */
+    max-width: 1200px;
+    /* Slightly wider to accommodate 3 cards */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -144,6 +160,7 @@ h1 {
 .highlight-text {
     background: linear-gradient(90deg, #ffffff 0%, #888888 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -189,7 +206,7 @@ h1 {
     border-radius: 38px;
     border: 8px solid #151515;
     z-index: 2;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
     background: #000;
 }
 
@@ -223,17 +240,21 @@ h1 {
 /* Flexbox Layout for Perfect Centering */
 .feature-grid {
     display: flex;
-    flex-wrap: wrap;       /* Allows wrapping to new lines */
-    justify-content: center; /* Centers the items horizontally */
+    flex-wrap: wrap;
+    /* Allows wrapping to new lines */
+    justify-content: center;
+    /* Centers the items horizontally */
     gap: 30px;
     padding: 0 10px;
 }
 
 /* The Card Styling */
 .feature-card {
-    flex: 1 1 300px;       /* Grow, Shrink, Basis */
-    max-width: 360px;      /* Caps width so bottom row doesn't stretch huge */
-    
+    flex: 1 1 300px;
+    /* Grow, Shrink, Basis */
+    max-width: 360px;
+    /* Caps width so bottom row doesn't stretch huge */
+
     position: relative;
     background: linear-gradient(180deg, rgba(30, 30, 30, 0.4) 0%, rgba(10, 10, 10, 0.9) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -241,13 +262,13 @@ h1 {
     padding: 40px 30px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
     border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
 }
 
 /* The "Spotlight" Glow */
@@ -270,18 +291,50 @@ h1 {
 }
 
 /* Card Colors */
-.feature-card.pink .card-glow { background: var(--neon-pink); }
-.feature-card.blue .card-glow { background: var(--neon-blue); }
-.feature-card.green .card-glow { background: var(--neon-green); }
-.feature-card.orange .card-glow { background: var(--brand-orange); }
-.feature-card.red .card-glow { background: var(--neon-red); } /* New Red Style */
+.feature-card.pink .card-glow {
+    background: var(--neon-pink);
+}
+
+.feature-card.blue .card-glow {
+    background: var(--neon-blue);
+}
+
+.feature-card.green .card-glow {
+    background: var(--neon-green);
+}
+
+.feature-card.orange .card-glow {
+    background: var(--brand-orange);
+}
+
+.feature-card.red .card-glow {
+    background: var(--neon-red);
+}
+
+/* New Red Style */
 
 /* Border Hover Effects */
-.feature-card.pink:hover { border-color: rgba(255, 64, 129, 0.4); }
-.feature-card.blue:hover { border-color: rgba(0, 229, 255, 0.4); }
-.feature-card.green:hover { border-color: rgba(204, 255, 0, 0.4); }
-.feature-card.orange:hover { border-color: rgba(255, 170, 0, 0.4); }
-.feature-card.red:hover { border-color: rgba(255, 61, 0, 0.4); } /* New Red Hover */
+.feature-card.pink:hover {
+    border-color: rgba(255, 64, 129, 0.4);
+}
+
+.feature-card.blue:hover {
+    border-color: rgba(0, 229, 255, 0.4);
+}
+
+.feature-card.green:hover {
+    border-color: rgba(204, 255, 0, 0.4);
+}
+
+.feature-card.orange:hover {
+    border-color: rgba(255, 170, 0, 0.4);
+}
+
+.feature-card.red:hover {
+    border-color: rgba(255, 61, 0, 0.4);
+}
+
+/* New Red Hover */
 
 /* Giant Background Number */
 .giant-num {
@@ -419,7 +472,7 @@ footer {
     font-size: 1.5rem;
 }
 
-.policy-content p, 
+.policy-content p,
 .policy-content li {
     color: var(--text-muted);
     margin-bottom: 15px;
@@ -436,20 +489,72 @@ footer {
    8. MOBILE RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
+    .navbar {
+        padding: 15px 0;
     }
-    .hero-content { order: 2; }
-    .hero-image { order: 1; justify-content: center; }
-    
-    h1 { font-size: 3rem; }
-    .cta-group { justify-content: center; }
-    
-    /* Flexbox handles the feature grid stacking automatically */
-    
-    .nav-links { display: none; }
-    .navbar { padding: 15px 0; }
-    .logo { margin: 0 auto; }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .hero-grid {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-grid>* {
+        width: 100%;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .phone-mockup {
+        width: 260px;
+        height: auto;
+        aspect-ratio: 9/19;
+        max-width: 100%;
+    }
+
+    .cta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn-store {
+        width: auto;
+        min-width: 220px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .feature-card {
+        max-width: 100%;
+    }
 }

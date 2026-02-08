@@ -330,7 +330,15 @@
         /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
+            }
+
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                display: none;
             }
 
             .hero {
@@ -341,7 +349,10 @@
 
             .hero-text {
                 padding-right: 0;
-                margin-top: 4rem;
+                margin-top: 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .features-grid {
@@ -351,6 +362,7 @@
             .phone-frame {
                 width: 260px;
                 height: 520px;
+                max-width: 100%;
             }
 
             .store-buttons {
@@ -358,12 +370,20 @@
                 flex-direction: column;
                 gap: 15px;
                 align-items: center;
+                width: 100%;
             }
 
             .btn {
                 margin-right: 0;
-                width: 100%;
-                max-width: 250px;
+                width: auto;
+                min-width: 220px;
+                display: inline-block;
+            }
+
+            .btn-outline {
+                width: auto;
+                min-width: 220px;
+                display: inline-block;
             }
         }
     </style>
@@ -485,8 +505,18 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Fastual. All rights reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.5;">Designed for metabolic health.</p>
+        <div class="container" style="text-align: center; padding: 2rem 0;">
+            <p
+                style="margin-bottom: 1rem; font-family: var(--font-serif); font-weight: 700; color: var(--text-main); font-size: 1.2rem;">
+                FASTUAL</p>
+            <div
+                style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; opacity: 0.6; font-size: 0.9rem;">
+                <a href="../index.html">Redjon Prengzi</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:prengzi.redjon@gmail.com">Support</a>
+            </div>
+            <p style="opacity: 0.3; font-size: 0.8rem;">&copy; 2026 Fastual. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- Android Modal -->
