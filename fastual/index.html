@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastual - Minimalist Fasting Timer</title>
+    <!-- Import Fonts: Playfair (Serif) & Inter (Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            /* FASTUAL "Midnight Forest" Palette */
+            --bg-color: #050F0A;
+            /* Deep Forest Green */
+            --card-color: #0F1F18;
+            /* Lighter Leaf Green */
+            --text-main: #E0E8E3;
+            /* Mist White */
+            --text-muted: #5C7064;
+            /* Moss Grey */
+            --accent-sage: #2FF57E;
+            /* Neon Bioluminescence */
+            --accent-copper: #C27352;
+            /* Earth/Clay */
+
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-serif);
+            /* Bespoke Touch */
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-main);
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-sage);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 0;
+            min-height: 80vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 4rem;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent-sage);
+            font-style: italic;
+            /* Editorial flair */
+        }
+
+        .hero-text p {
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-right: 1rem;
+            box-shadow: 0 0 20px rgba(47, 245, 126, 0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-sage);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(47, 245, 126, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text-main);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-copper);
+            color: var(--accent-copper);
+            background: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* --- PHONE MOCKUP --- */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* The Glow Effect behind phone */
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            background: var(--accent-sage);
+            filter: blur(100px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .phone-frame {
+            width: 300px;
+            height: 600px;
+            border: 12px solid #1a1a1a;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 2px #222;
+            background: #050F0A;
+            z-index: 1;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 25px;
+            background: #1a1a1a;
+            border-radius: 0 0 15px 15px;
+            z-index: 2;
+        }
+
+        .app-screenshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            padding: 8rem 0;
+            background: linear-gradient(to bottom, var(--bg-color), #020503);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-color);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-sage);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(47, 245, 126, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent-sage);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-sans);
+            /* Keep features clean sans-serif */
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* --- SUPPORT SECTION --- */
+        .support {
+            background-color: var(--card-color);
+            padding: 6rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .support-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .email-box {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2.5rem;
+            border-radius: 24px;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .email-link {
+            font-size: 1.5rem;
+            font-family: var(--font-serif);
+            color: var(--accent-copper);
+            font-weight: 600;
+        }
+
+        .email-link:hover {
+            opacity: 0.8;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #111;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 2rem;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-top: 4rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-frame {
+                width: 260px;
+                height: 520px;
+            }
+
+            .store-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .btn {
+                margin-right: 0;
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <header class="container">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-sage)">
+                <!-- Abstract "F" or Timer Icon -->
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+            </svg>
+            FASTUAL
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#onboarding">Get Started</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero container">
+        <div class="hero-text">
+            <h1>Tracking the<br>metabolic <span>window</span>.</h1>
+            <p>Fastual is a focused fasting timer designed for clarity and ease of use. Monitor your progress with a
+                minimalist interface built for long-term health visibility.</p>
+
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/us/app/fastual/id6758233821" class="btn" target="_blank">Download for
+                    iOS</a>
+                <a href="javascript:void(0)" class="btn btn-outline" onclick="showAndroidModal()">Download for
+                    Android</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="phone-frame">
+                <!-- PLACEHOLDER FOR SCREENSHOT -->
+                <!-- Add a file named 'screenshot.png' to your folder -->
+                <img src="screenshot.png" alt="Fastual App Dashboard" class="app-screenshot">
+            </div>
+        </div>
+    </section>
+
+    <!-- ONBOARDING -->
+    <section id="onboarding" class="features">
+        <div class="container">
+            <h2>Get Started in Minutes</h2>
+            <div class="features-grid">
+
+                <!-- Step 1: Download -->
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </div>
+                    <h3>1. Download Fastual</h3>
+                    <p>Available on both iOS and Android. Open the app to start tracking immediately without needing a
+                        complex setup process.</p>
+                </div>
+
+                <!-- Step 2: Configure -->
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>2. Set Your Fasting Window</h3>
+                    <p>Choose your eating and fasting hours. Start with 16:8 if you're new, or go straight to 20:4 if
+                        you're experienced.</p>
+                </div>
+
+                <!-- Step 3: Track -->
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>3. Start Your First Fast</h3>
+                    <p>Tap start when you finish eating. The timer tracks your progress and notifies you when your
+                        window opens. That's it.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="support" class="support">
+        <div class="container support-content">
+            <h2>Support</h2>
+            <p>Questions about the app or found an issue in the code? Get in touch.</p>
+
+            <div class="email-box">
+                <p
+                    style="margin-bottom: 0.5rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted);">
+                    CONTACT US</p>
+                <!-- REPLACE WITH YOUR EMAIL -->
+                <a href="mailto:support@fastual.app" class="email-link">prengzi.redjon@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Fastual. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.5;">Designed for metabolic health.</p>
+    </footer>
+
+    <!-- Android Modal -->
+    <div id="androidModal"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:9999; display:flex; align-items:center; justify-content:center; padding:2rem; backdrop-filter:blur(8px); opacity:0; transition:opacity 0.3s ease; pointer-events:none;">
+        <div
+            style="background:var(--card-color); border:1px solid var(--accent-sage); padding:3rem; border-radius:24px; max-width:500px; text-align:center; transform:scale(0.9); transition:transform 0.3s ease;">
+            <div style="color:var(--accent-sage); margin-bottom:1.5rem;">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </div>
+            <h2 style="color:white; margin-bottom:1rem; font-size:1.8rem;">Closed Testing</h2>
+            <p style="color:var(--text-muted); margin-bottom:2rem; line-height:1.6;">The Android version is currently in
+                closed testing on the Play Store. If you're interested in joining, please contact me directly for
+                access.</p>
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn" style="margin:0; width:100%;">Contact Directly</a>
+                <button onclick="closeAndroidModal()"
+                    style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; font-size:0.9rem; text-decoration:underline;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAndroidModal() {
+            const modal = document.getElementById('androidModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.style.opacity = '1'; modal.style.pointerEvents = 'auto'; modal.children[0].style.transform = 'scale(1)'; }, 10);
+        }
+        function closeAndroidModal() {
+            const modal = document.getElementById('androidModal');
+            modal.style.opacity = '0'; modal.style.pointerEvents = 'none'; modal.children[0].style.transform = 'scale(0.9)';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+        window.onclick = function (event) {
+            const modal = document.getElementById('androidModal');
+            if (event.target == modal) closeAndroidModal();
+        }
+    </script>
+
+</body>
+
+</html>

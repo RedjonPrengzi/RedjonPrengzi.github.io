@@ -1,0 +1,9 @@
+# robots.txt for RedjonPrengzi.github.io
+
+User-agent: *
+Allow: /
+Disallow: /.*
+Disallow: /LICENSE
+Disallow: /README.md
+
+Sitemap: https://redjonprengzi.github.io/sitemap.xml

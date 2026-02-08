@@ -1,0 +1,455 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    /* Core Backgrounds */
+    --bg-black: #050505;       /* Pitch Black */
+    
+    /* Text Colors */
+    --text-main: #ffffff;
+    --text-muted: #a1a1a1;
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    /* Brand / Neon Palette */
+    --brand-orange: #FFAA00;
+    --neon-pink: #ff4081;
+    --neon-blue: #00e5ff;
+    --neon-green: #ccff00;
+    --neon-red: #ff3d00;       /* Added for Feature 05 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo, .tagline, .btn-solid, .giant-num {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* Layout Utility */
+.container {
+    max-width: 1200px; /* Slightly wider to accommodate 3 cards */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. NAVIGATION BAR
+   ========================================= */
+.navbar {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--brand-orange);
+}
+
+.btn-outline {
+    border: 1px solid var(--glass-border);
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: #fff !important;
+}
+
+.btn-outline:hover {
+    border-color: var(--brand-orange);
+    color: var(--brand-orange) !important;
+    background: rgba(255, 170, 0, 0.05);
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+    padding: 180px 0 100px;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.tagline {
+    color: var(--brand-orange);
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.highlight-text {
+    background: linear-gradient(90deg, #ffffff 0%, #888888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    max-width: 480px;
+    font-weight: 300;
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-store {
+    background: var(--text-main);
+    color: var(--bg-black);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid transparent;
+}
+
+.btn-store:hover {
+    background: var(--brand-orange);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 170, 0, 0.2);
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-mockup {
+    width: 280px;
+    border-radius: 38px;
+    border: 8px solid #151515;
+    z-index: 2;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    background: #000;
+}
+
+.glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 170, 0, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* =========================================
+   4. FEATURES SECTION (UPDATED LAYOUT)
+   ========================================= */
+.features {
+    padding: 140px 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 70px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* Flexbox Layout for Perfect Centering */
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;       /* Allows wrapping to new lines */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 30px;
+    padding: 0 10px;
+}
+
+/* The Card Styling */
+.feature-card {
+    flex: 1 1 300px;       /* Grow, Shrink, Basis */
+    max-width: 360px;      /* Caps width so bottom row doesn't stretch huge */
+    
+    position: relative;
+    background: linear-gradient(180deg, rgba(30, 30, 30, 0.4) 0%, rgba(10, 10, 10, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px 30px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* The "Spotlight" Glow */
+.card-glow {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+    filter: blur(70px);
+    opacity: 0.1;
+    transition: opacity 0.5s ease;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.feature-card:hover .card-glow {
+    opacity: 0.35;
+}
+
+/* Card Colors */
+.feature-card.pink .card-glow { background: var(--neon-pink); }
+.feature-card.blue .card-glow { background: var(--neon-blue); }
+.feature-card.green .card-glow { background: var(--neon-green); }
+.feature-card.orange .card-glow { background: var(--brand-orange); }
+.feature-card.red .card-glow { background: var(--neon-red); } /* New Red Style */
+
+/* Border Hover Effects */
+.feature-card.pink:hover { border-color: rgba(255, 64, 129, 0.4); }
+.feature-card.blue:hover { border-color: rgba(0, 229, 255, 0.4); }
+.feature-card.green:hover { border-color: rgba(204, 255, 0, 0.4); }
+.feature-card.orange:hover { border-color: rgba(255, 170, 0, 0.4); }
+.feature-card.red:hover { border-color: rgba(255, 61, 0, 0.4); } /* New Red Hover */
+
+/* Giant Background Number */
+.giant-num {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.03);
+    line-height: 1;
+    z-index: 0;
+    transition: 0.4s ease-out;
+    user-select: none;
+}
+
+.feature-card:hover .giant-num {
+    transform: scale(1.1) rotate(-8deg);
+    color: rgba(255, 255, 255, 0.06);
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* =========================================
+   5. SUPPORT SECTION
+   ========================================= */
+.support {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.support h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.support p {
+    margin-bottom: 30px;
+    color: var(--text-muted);
+}
+
+.btn-solid {
+    background-color: var(--brand-orange);
+    color: #000;
+    padding: 15px 40px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-solid:hover {
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(255, 170, 0, 0.5);
+    transform: scale(1.02);
+}
+
+.email-text {
+    margin-top: 25px !important;
+    font-family: monospace;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+    padding: 60px 0;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 50px;
+    background: #020202;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--brand-orange);
+    text-decoration: underline;
+}
+
+/* =========================================
+   7. PRIVACY POLICY PAGE
+   ========================================= */
+.policy-container {
+    max-width: 800px;
+    padding: 140px 20px 80px;
+}
+
+.policy-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.policy-content .last-updated {
+    font-family: monospace;
+    color: var(--glass-border);
+    margin-bottom: 50px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.policy-content h2 {
+    color: var(--brand-orange);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.policy-content p, 
+.policy-content li {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.policy-content ul {
+    list-style: inside square;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   8. MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-content { order: 2; }
+    .hero-image { order: 1; justify-content: center; }
+    
+    h1 { font-size: 3rem; }
+    .cta-group { justify-content: center; }
+    
+    /* Flexbox handles the feature grid stacking automatically */
+    
+    .nav-links { display: none; }
+    .navbar { padding: 15px 0; }
+    .logo { margin: 0 auto; }
+}

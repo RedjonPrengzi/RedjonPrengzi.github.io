@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Bar | Daily Lyrical Analysis</title>
+    <meta name="description"
+        content="The Daily Bar delivers one hand-picked rap verse every day with a full technical breakdown.">
+
+    <!-- Google Fonts: Oswald (Headings) and Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">THE DAILY BAR</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="privacy-policy.html" class="btn-outline">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>ONE VERSE.<br><span class="highlight-text">EVERY DAY.</span></h1>
+                <p>A daily selection of impactful lyricism. Color-coded rhyme schemes, internal breakdowns, and
+                    technical analysis
+                    built into a minimalist interface.</p>
+                <div class="cta-group">
+                    <a href="https://apps.apple.com/us/app/daily-bars/id6757107337" class="btn-store"
+                        target="_blank">Download for iOS</a>
+                    <a href="javascript:void(0)" class="btn-store" onclick="showAndroidModal()">Download for Android</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="glow-effect"></div>
+                <!-- Replace 'app-screenshot.png' with your actual screenshot file -->
+                <img src="app-screenshot.png" alt="The Daily Bar App Interface" class="phone-mockup">
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">THE BREAKDOWN</h2>
+            <div class="feature-grid">
+
+                <!-- Feature 1: Pink -->
+                <div class="feature-card pink">
+                    <div class="card-glow"></div>
+                    <div class="content">
+                        <span class="giant-num">01</span>
+                        <h3>Lyrical Structure</h3>
+                        <p>Visual highlights identify internal rhymes, multis, and assonance. See the patterns behind
+                            the flow.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Blue -->
+                <div class="feature-card blue">
+                    <div class="card-glow"></div>
+                    <div class="content">
+                        <span class="giant-num">02</span>
+                        <h3>Daily Selection</h3>
+                        <p>One standout verse every 24 hours, hand-curated and synchronized to your local time.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Green -->
+                <div class="feature-card green">
+                    <div class="card-glow"></div>
+                    <div class="content">
+                        <span class="giant-num">03</span>
+                        <h3>Local Access</h3>
+                        <p>All verses and your favorites are cached locally, allowing you to revisit the analysis
+                            anytime.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Orange (Drop A Bar) -->
+                <div class="feature-card orange">
+                    <div class="card-glow"></div>
+                    <div class="content">
+                        <span class="giant-num">04</span>
+                        <h3>Drop A Bar</h3>
+                        <p>Submit your own favorite verses directly in the app. Every submission is reviewed for
+                            inclusion in the daily rotation.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Red (The Crate) -->
+                <div class="feature-card red">
+                    <div class="card-glow"></div>
+                    <div class="content">
+                        <span class="giant-num">05</span>
+                        <h3>The Crate</h3>
+                        <p>Save verses to your personal library to build a collection of your favorite technical
+                            breakdowns.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support">
+        <div class="container support-container">
+            <div class="glass-card support-card">
+                <h2>SUPPORT</h2>
+                <p>Encountered a bug or have a suggestion? Get in touch.</p>
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn-solid">Contact Support</a>
+                <p class="email-text">prengzi.redjon@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 The Daily Bar. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Android Modal -->
+    <div id="androidModal"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:9999; display:flex; align-items:center; justify-content:center; padding:2rem; backdrop-filter:blur(8px); opacity:0; transition:opacity 0.3s ease; pointer-events:none;">
+        <div
+            style="background:#1a1a1a; border:1px solid #FF0055; padding:3rem; border-radius:24px; max-width:500px; text-align:center; transform:scale(0.9); transition:transform 0.3s ease;">
+            <div style="color:#FF0055; margin-bottom:1.5rem;">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </div>
+            <h2 style="color:white; margin-bottom:1rem; font-size:1.8rem; font-family:'Oswald', sans-serif;">CLOSED
+                TESTING</h2>
+            <p style="color:#888; margin-bottom:2rem; line-height:1.6; font-family:'Inter', sans-serif;">The Android
+                version is currently in closed testing on the Play Store. Contact me directly for access.</p>
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn-solid"
+                    style="margin:0; width:100%; text-align:center;">Contact Directly</a>
+                <button onclick="closeAndroidModal()"
+                    style="background:transparent; border:none; color:#555; cursor:pointer; font-size:0.9rem; text-decoration:underline;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAndroidModal() {
+            const modal = document.getElementById('androidModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.style.opacity = '1'; modal.style.pointerEvents = 'auto'; modal.children[0].style.transform = 'scale(1)'; }, 10);
+        }
+        function closeAndroidModal() {
+            const modal = document.getElementById('androidModal');
+            modal.style.opacity = '0'; modal.style.pointerEvents = 'none'; modal.children[0].style.transform = 'scale(0.9)';
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+        window.onclick = function (event) {
+            const modal = document.getElementById('androidModal');
+            if (event.target == modal) closeAndroidModal();
+        }
+    </script>
+
+</body>
+
+</html>
