@@ -11,11 +11,14 @@
     <!-- Additional SEO Meta Tags -->
     <meta name="author" content="Redjon Prengzi">
     <meta name="keywords"
-        content="mobile developer, iOS developer, Android developer, React Native, mobile applications, app development">
+        content="mobile developer, iOS developer, Android developer, React Native, Expo, mobile applications, app development, freelance developer, cross-platform apps, React Native developer">
     <meta name="theme-color" content="#030303">
     <meta name="msapplication-TileColor" content="#030303">
     <meta http-equiv="content-language" content="en">
     <meta name="geo.region" content="US">
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google4b2e6675b79def8e" />
 
     <!-- Favicon -->
     <link rel="icon"
@@ -24,13 +27,20 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://redjonprengzi.github.io/">
 
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://redjonprengzi.github.io/">
     <meta property="og:title" content="Redjon Prengzi | Mobile Developer">
     <meta property="og:description" content="Building focused, high-performance mobile applications with React Native.">
     <meta property="og:image" content="https://redjonprengzi.github.io/og-image.jpg">
+    <meta property="og:image:alt" content="Redjon Prengzi Portfolio - Mobile Developer specializing in React Native, iOS and Android apps">
     <meta property="og:site_name" content="Redjon Prengzi Portfolio">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -38,6 +48,8 @@
     <meta name="twitter:title" content="Redjon Prengzi | Privacy-First Mobile Developer">
     <meta name="twitter:description" content="Building focused, privacy-first mobile applications with React Native.">
     <meta name="twitter:image" content="https://redjonprengzi.github.io/og-image.jpg">
+    <meta name="twitter:image:alt" content="Redjon Prengzi Portfolio - Mobile Developer specializing in React Native, iOS and Android apps">
+    <meta name="twitter:creator" content="@RediPrengzi">
 
     <!-- Structured Data - Person Schema -->
     <script type="application/ld+json">
@@ -70,20 +82,102 @@
     }
     </script>
 
+    <!-- Structured Data - SoftwareApplication Schemas for Projects -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Logline",
+        "description": "Discover movies through story, not marketing. Logline surfaces movies based on script quality and narrative craft.",
+        "url": "https://redjonprengzi.github.io/logline/index.html",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "iOS, Android",
+        "author": {
+          "@type": "Person",
+          "name": "Redjon Prengzi"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Cleener",
+        "description": "Quit smoking with milestone tracking and dual-mode dashboard for breaking addiction.",
+        "url": "https://redjonprengzi.github.io/cleener/index.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "iOS, Android",
+        "author": {
+          "@type": "Person",
+          "name": "Redjon Prengzi"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "The Daily Bar",
+        "description": "One critically acclaimed verse every 24 hours with technical breakdown of rhyme schemes.",
+        "url": "https://redjonprengzi.github.io/dailyBars/index.html",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "iOS, Android",
+        "author": {
+          "@type": "Person",
+          "name": "Redjon Prengzi"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Fastual",
+        "description": "Fasting simplified with minimalist timer and clear metabolic state visibility.",
+        "url": "https://redjonprengzi.github.io/fastual/index.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "iOS, Android",
+        "author": {
+          "@type": "Person",
+          "name": "Redjon Prengzi"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Verbalyze AI",
+        "description": "Personalized AI coaching and companionship for mental wellness with privacy-first architecture.",
+        "url": "https://redjonprengzi.github.io/verbalyze/index.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "iOS, Android",
+        "author": {
+          "@type": "Person",
+          "name": "Redjon Prengzi"
+        }
+      }
+    ]
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N24K5M22QV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N24K5M22QV');
+    </script>
+
     <!-- Scripts & Styles -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="text-slate-200 antialiased overflow-x-hidden">
+    <!-- Skip link for keyboard accessibility -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:font-semibold focus:rounded">Skip to main content</a>
     <header class="fixed top-0 z-50 w-full px-8 py-6">
         <div class="mx-auto flex max-w-7xl items-center justify-between">
             <div class="flex items-center gap-4">
@@ -98,13 +192,13 @@
                 <a class="text-[11px] uppercase tracking-[0.3em] font-semibold text-slate-400 hover:text-white transition-colors"
                     href="#contact">Contact</a>
             </nav>
-            <button id="mobile-menu-btn" class="md:hidden text-white relative z-50" aria-label="Toggle menu">
-                <span id="menu-icon" class="material-symbols-outlined">menu</span>
-                <span id="close-icon" class="material-symbols-outlined hidden">close</span>
+            <button id="mobile-menu-btn" class="md:hidden text-white relative z-50" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span id="menu-icon" class="material-symbols-outlined" aria-hidden="true">menu</span>
+                <span id="close-icon" class="material-symbols-outlined hidden" aria-hidden="true">close</span>
             </button>
         </div>
     </header>
-    <main>
+    <main id="main">
         <section class="mesh-gradient relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
             <div class="max-w-5xl space-y-12">
                 <div class="inline-block opacity-60">
@@ -148,7 +242,7 @@
                 <div class="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-2">
                     <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
                         <div class="mb-12 text-red-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow">movie</span>
+                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">movie</span>
                         </div>
                         <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic">Logline</h3>
                         <p class="text-slate-400 leading-relaxed font-light text-lg italic">
@@ -158,12 +252,12 @@
                         </p>
                         <div class="mt-12">
                             <a class="text-[10px] uppercase tracking-[0.4em] text-red-500 font-bold hover:text-red-400 transition-colors"
-                                href="logline/index.html">View Project —&gt;</a>
+                                href="logline/index.html">View Logline —&gt;</a>
                         </div>
                     </div>
                     <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm md:mt-24">
                         <div class="mb-12 text-emerald-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow">smoke_free</span>
+                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">smoke_free</span>
                         </div>
                         <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic">Cleener</h3>
                         <p class="text-slate-400 leading-relaxed font-light text-lg italic">
@@ -173,12 +267,12 @@
                         </p>
                         <div class="mt-12">
                             <a class="text-[10px] uppercase tracking-[0.4em] text-emerald-500 font-bold hover:text-emerald-400 transition-colors"
-                                href="cleener/index.html">View Project —&gt;</a>
+                                href="cleener/index.html">View Cleener —&gt;</a>
                         </div>
                     </div>
                     <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
                         <div class="mb-12 text-amber-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow">history_edu</span>
+                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">history_edu</span>
                         </div>
                         <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic">The Daily Bar</h3>
                         <p class="text-slate-400 leading-relaxed font-light text-lg italic">
@@ -187,12 +281,12 @@
                         </p>
                         <div class="mt-12">
                             <a class="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-bold hover:text-amber-400 transition-colors"
-                                href="dailyBars/index.html">View Project —&gt;</a>
+                                href="dailyBars/index.html">View Daily Bar —&gt;</a>
                         </div>
                     </div>
                     <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm md:mt-24">
                         <div class="mb-12 text-cyan-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow">timer</span>
+                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">timer</span>
                         </div>
                         <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic">Fastual</h3>
                         <p class="text-slate-400 leading-relaxed font-light text-lg italic">
@@ -202,12 +296,12 @@
                         </p>
                         <div class="mt-12">
                             <a class="text-[10px] uppercase tracking-[0.4em] text-cyan-500 font-bold hover:text-cyan-400 transition-colors"
-                                href="fastual/index.html">View Project —&gt;</a>
+                                href="fastual/index.html">View Fastual —&gt;</a>
                         </div>
                     </div>
                     <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
                         <div class="mb-12 text-cyan-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow">psychology</span>
+                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">psychology</span>
                         </div>
                         <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic">Verbalyze AI</h3>
                         <p class="text-slate-400 leading-relaxed font-light text-lg italic">
@@ -216,7 +310,7 @@
                         </p>
                         <div class="mt-12">
                             <a class="text-[10px] uppercase tracking-[0.4em] text-cyan-500 font-bold hover:text-cyan-400 transition-colors"
-                                href="verbalyze/index.html">View Project —&gt;</a>
+                                href="verbalyze/index.html">View Verbalyze AI —&gt;</a>
                         </div>
                     </div>
                 </div>
@@ -264,7 +358,7 @@
                             <span
                                 class="block h-px w-0 bg-white/40 transition-all duration-700 group-hover:w-full mt-2"></span>
                         </a>
-                        <p class="text-slate-600 text-sm tracking-wide">Response within 48 hours →</p>
+                        <p class="text-slate-600 text-sm tracking-wide">Response within 48 hours <span aria-hidden="true">→</span></p>
                     </div>
                 </div>
                 <div class="flex flex-col items-center gap-4 pt-8">
@@ -289,12 +383,12 @@
     </main>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu"
+    <nav id="mobile-menu" aria-label="Main navigation"
         class="hidden fixed inset-0 z-40 mesh-gradient flex-col items-center justify-center gap-8 md:hidden">
         <a class="text-2xl font-serif italic text-white" href="#work" onclick="closeMobileMenu()">Curated Work</a>
         <a class="text-2xl font-serif italic text-white" href="#about" onclick="closeMobileMenu()">About</a>
         <a class="text-2xl font-serif italic text-white" href="#contact" onclick="closeMobileMenu()">Contact</a>
-    </div>
+    </nav>
 </body>
 
 </html>

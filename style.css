@@ -56,3 +56,40 @@ body {
 .email-glow:hover span:first-child {
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .slab-card {
+        transition: none !important;
+    }
+
+    .slab-card:hover {
+        transform: none !important;
+    }
+
+    .glyph-glow {
+        transition: none !important;
+        filter: drop-shadow(0 0 15px currentColor) !important;
+        opacity: 0.8 !important;
+        transform: none !important;
+    }
+
+    .slab-card:hover .glyph-glow {
+        filter: drop-shadow(0 0 15px currentColor) !important;
+        opacity: 0.8 !important;
+        transform: none !important;
+    }
+
+    .email-glow:hover span:first-child {
+        text-shadow: none !important;
+    }
+}

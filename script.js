@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
             menuIcon.classList.remove('hidden');
             closeIcon.classList.add('hidden');
         }
+
+        // Update aria-expanded state
+        mobileMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
     }
 
     function closeMenu() {
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('flex');
         menuIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
 
     if (mobileMenuBtn && mobileMenu) {
