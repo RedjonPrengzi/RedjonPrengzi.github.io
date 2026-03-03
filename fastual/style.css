@@ -208,6 +208,26 @@ h1 {
     50% { transform: scale(1.1); opacity: 0.8; }
 }
 
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .ring-animation {
+        animation: none !important;
+    }
+
+    .store-btn:hover {
+        transform: none !important;
+    }
+}
+
 .glow-effect {
     position: absolute;
     width: 400px;

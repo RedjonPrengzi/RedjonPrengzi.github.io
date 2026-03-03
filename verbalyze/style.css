@@ -92,6 +92,17 @@ body {
     top: 6px;
 }
 
+/* Focus visible styles */
+*:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
 /* Typography Scale */
 h1,
 h2,
@@ -180,6 +191,10 @@ ul {
 
 .nav-links a:hover {
     color: var(--color-text);
+}
+
+.nav-links a:focus-visible {
+    outline-offset: 4px;
 }
 
 .btn-outline {
@@ -445,8 +460,13 @@ section {
 }
 
 .step-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: var(--color-primary-dark);
+}
+
+.step-item:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
 }
 
 .step-number {
@@ -516,9 +536,14 @@ section {
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: var(--color-primary-dark);
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
 }
 
 .card-glow {
@@ -746,6 +771,35 @@ footer {
     background: rgba(255, 255, 255, 0.05);
 }
 
+.btn-close:focus-visible {
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
+}
+
+.btn-full-width {
+    margin: 0;
+    width: 100%;
+}
+
+.screenshot-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-background) 100%);
+}
+
+.screenshot-placeholder.hidden {
+    display: none;
+}
+
+.screenshot-placeholder.visible {
+    display: flex;
+}
+
 /* =========================================
    9. POLICY PAGES
    ========================================= */
@@ -823,6 +877,34 @@ footer {
     background: var(--color-surface);
     font-family: monospace;
     white-space: pre-wrap;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .floating {
+        animation: none !important;
+    }
+
+    .step-item:hover {
+        transform: none !important;
+    }
+
+    .feature-card:hover {
+        transform: none !important;
+    }
+
+    .btn:hover {
+        transform: none !important;
+    }
 }
 
 /* =========================================

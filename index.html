@@ -189,11 +189,11 @@
                 <div class="h-px w-8 bg-white/20"></div>
             </div>
             <nav class="hidden items-center gap-12 md:flex">
-                <a class="text-[11px] uppercase tracking-[0.3em] font-semibold text-slate-400 hover:text-white transition-colors"
+                <a class="nav-link text-[11px] uppercase tracking-[0.3em] font-semibold text-slate-400 hover:text-white transition-colors"
                     href="#work">Curated Work</a>
-                <a class="text-[11px] uppercase tracking-[0.3em] font-semibold text-slate-400 hover:text-white transition-colors"
+                <a class="nav-link text-[11px] uppercase tracking-[0.3em] font-semibold text-slate-400 hover:text-white transition-colors"
                     href="#about">About</a>
-                <a class="text-[11px] uppercase tracking-[0.3em] font-semibold text-slate-400 hover:text-white transition-colors"
+                <a class="nav-link text-[11px] uppercase tracking-[0.3em] font-semibold text-slate-400 hover:text-white transition-colors"
                     href="#contact">Contact</a>
             </nav>
             <button id="mobile-menu-btn" class="md:hidden text-white relative z-50" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -210,9 +210,7 @@
                 </div>
                 <h1
                     class="font-serif text-5xl font-light leading-tight text-white md:text-8xl lg:text-9xl tracking-tight text-balanced">
-                    Building apps <br />
-                    that do one <br />
-                    <span class="italic font-normal">thing</span> well.
+                    Building apps that do one <span class="italic font-normal">thing</span> well.
                 </h1>
                 <p
                     class="mx-auto max-w-2xl text-lg font-light leading-relaxed text-slate-400 md:text-xl font-sans tracking-wide">
@@ -244,7 +242,10 @@
                     </p>
                 </div>
                 <div class="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-2">
-                    <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
+                    <div class="slab-card slab-card-featured group relative flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
+                        <div class="absolute top-6 right-6">
+                            <span class="text-[9px] uppercase tracking-[0.3em] text-red-400/60 font-semibold">Featured</span>
+                        </div>
                         <div class="mb-12 text-red-500/80">
                             <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">movie</span>
                         </div>

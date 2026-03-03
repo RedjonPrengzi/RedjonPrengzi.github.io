@@ -38,6 +38,34 @@ body {
     overflow-x: hidden;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--brand-orange);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    z-index: 9999;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* Focus visible styles */
+*:focus-visible {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 h1,
 h2,
 h3,
@@ -111,6 +139,10 @@ ul {
     color: var(--brand-orange);
 }
 
+.nav-links a:focus-visible {
+    outline-offset: 4px;
+}
+
 .btn-outline {
     border: 1px solid var(--glass-border);
     padding: 8px 20px;
@@ -122,6 +154,10 @@ ul {
     border-color: var(--brand-orange);
     color: var(--brand-orange) !important;
     background: rgba(255, 170, 0, 0.05);
+}
+
+.btn-outline:focus-visible {
+    outline-offset: 4px;
 }
 
 /* =========================================
@@ -266,9 +302,14 @@ h1 {
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-4px);
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.feature-card:focus-within {
+    border-color: var(--brand-orange);
+    box-shadow: 0 4px 20px rgba(255, 170, 0, 0.3);
 }
 
 /* The "Spotlight" Glow */
@@ -414,11 +455,35 @@ h1 {
     transform: scale(1.02);
 }
 
+.btn-solid:focus-visible {
+    outline-offset: 4px;
+}
+
+.btn-full-width {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
 .email-text {
     margin-top: 25px !important;
     font-family: monospace;
     opacity: 0.6;
     font-size: 0.9rem;
+}
+
+/* Glass card for support section */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 3rem;
+    backdrop-filter: blur(10px);
+}
+
+.support-card {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* =========================================
@@ -442,6 +507,47 @@ footer {
 .footer-links a:hover {
     color: var(--brand-orange);
     text-decoration: underline;
+}
+
+.footer-links a:focus-visible {
+    outline-offset: 4px;
+}
+
+/* Footer center variant */
+.footer-content-center {
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 4rem;
+}
+
+.footer-brand {
+    margin-bottom: 1rem;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.footer-links-center {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+.footer-links-center a:hover {
+    color: var(--brand-orange);
+}
+
+.footer-links-center a:focus-visible {
+    outline-offset: 4px;
+}
+
+.footer-copyright {
+    opacity: 0.3;
+    font-size: 0.8rem;
 }
 
 /* =========================================
@@ -486,7 +592,117 @@ footer {
 }
 
 /* =========================================
-   8. MOBILE RESPONSIVE
+   8. MODAL
+   ========================================= */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    border: 1px solid var(--brand-orange);
+    padding: 3rem;
+    border-radius: 24px;
+    max-width: 500px;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-icon {
+    color: var(--brand-orange);
+    margin-bottom: 1.5rem;
+}
+
+.modal-title {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+.modal-text {
+    color: #888;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    padding: 0.5rem;
+}
+
+.modal-close:focus-visible {
+    outline-color: var(--brand-orange);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   9. REDUCED MOTION SUPPORT
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .feature-card:hover {
+        transform: none;
+    }
+
+    .feature-card:hover .giant-num {
+        transform: none;
+    }
+
+    .btn-store:hover {
+        transform: none;
+    }
+
+    .btn-solid:hover {
+        transform: none;
+    }
+}
+
+/* =========================================
+   10. MOBILE RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
     .navbar {
