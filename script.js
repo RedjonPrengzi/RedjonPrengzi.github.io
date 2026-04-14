@@ -1,20 +1,3 @@
-tailwind.config = {
-    darkMode: "class",
-    theme: {
-        extend: {
-            colors: {
-                "primary": "#3b82f6",
-                "depth-black": "#030303",
-                "depth-charcoal": "#0a0a0c",
-            },
-            fontFamily: {
-                "sans": ["'Plus Jakarta Sans'", "sans-serif"],
-                "serif": ["'Playfair Display'", "serif"]
-            }
-        },
-    },
-}
-
 // Mobile menu functionality - wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
