@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N24K5M22QV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N24K5M22QV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravn - Your Raven for the Web</title>
+    <meta name="description" content="A local-first, privacy-focused link collection app. Save links from anywhere, organize into collections, browse offline. No account. No cloud. Just you and your web.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://redjonprengzi.github.io/ravn/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://redjonprengzi.github.io/ravn/">
+    <meta property="og:title" content="Ravn - Your Raven for the Web">
+    <meta property="og:description" content="A local-first, privacy-focused link collection app. Save links from anywhere, organize into collections, browse offline. No account. No cloud. Just you and your web.">
+    <meta property="og:image" content="https://redjonprengzi.github.io/og-image.jpg">
+    <meta property="og:image:alt" content="Ravn - Privacy-first link collection app for iOS">
+    <meta property="og:site_name" content="Ravn by Redjon Prengzi">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://redjonprengzi.github.io/ravn/">
+    <meta name="twitter:title" content="Ravn - Your Raven for the Web">
+    <meta name="twitter:description" content="A local-first, privacy-focused link collection app. Save links from anywhere, organize into collections, browse offline. No account. No cloud. Just you and your web.">
+    <meta name="twitter:image" content="https://redjonprengzi.github.io/og-image.jpg">
+    <meta name="twitter:image:alt" content="Ravn - Privacy-first link collection app for iOS">
+    <meta name="twitter:creator" content="@RediPrengzi">
+
+    <!-- Structured Data - SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ravn",
+      "description": "A local-first, privacy-focused link collection app. Save links from anywhere, organize into collections, browse offline. No account. No cloud. Just you and your web.",
+      "url": "https://redjonprengzi.github.io/ravn/",
+      "image": "https://redjonprengzi.github.io/og-image.jpg",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "iOS",
+      "author": {
+        "@type": "Person",
+        "name": "Redjon Prengzi",
+        "url": "https://redjonprengzi.github.io/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Fonts: Playfair (Serif) & Inter (Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --bg-color: #050505;
+            --card-color: #0A0A0F;
+            --surface-color: #111118;
+            --text-main: #ffffff;
+            --text-muted: #6B6B6B;
+            --text-secondary: #9CA3AF;
+            --accent-purple: #8B5CF6;
+            --accent-purple-light: #A78BFA;
+            --accent-purple-dark: #7C3AED;
+            --accent-amber: #F59E0B;
+            --border-color: #2A2A2A;
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-purple);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            z-index: 9999;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        /* Focus visible styles */
+        *:focus-visible {
+            outline: 2px solid var(--accent-purple);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-main);
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-purple-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-purple);
+        }
+
+        nav a:focus-visible {
+            outline-offset: 4px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-purple);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 0;
+            min-height: 80vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 4rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-purple-light);
+            font-weight: 600;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-purple);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent-purple);
+            font-style: italic;
+        }
+
+        .hero-text h1 .raven {
+            font-style: normal;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero-text p {
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+
+        .hero-text .subtitle {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-right: 1rem;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-purple);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn:focus-visible {
+            outline-color: white;
+            outline-offset: 3px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-amber);
+            color: var(--accent-amber);
+            background: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* --- PHONE MOCKUP --- */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* The Glow Effect behind phone */
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            background: var(--accent-purple);
+            filter: blur(100px);
+            opacity: 0.12;
+            z-index: 0;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 4rem;
+        }
+
+        .hero-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 25px;
+            background: #1a1a1a;
+            border-radius: 0 0 15px 15px;
+            z-index: 2;
+        }
+
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            background: var(--accent-purple);
+            filter: blur(100px);
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .phone-frame {
+            width: 300px;
+            height: 600px;
+            border: 12px solid #1a1a1a;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 2px #222, 0 0 80px rgba(139, 92, 246, 0.1);
+            background: #050505;
+            z-index: 1;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 25px;
+            background: #1a1a1a;
+            border-radius: 0 0 15px 15px;
+            z-index: 2;
+        }
+
+        .app-screenshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            padding: 8rem 0;
+            background: linear-gradient(to bottom, var(--bg-color), #070710);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-color);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .feature-card:focus-within {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent-purple);
+        }
+
+        .icon-box svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        /* --- PHILOSOPHY SECTION --- */
+        .philosophy {
+            padding: 8rem 0;
+            background: var(--card-color);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .philosophy-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy-quote {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--text-main);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-quote span {
+            color: var(--accent-purple);
+        }
+
+        .philosophy p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy .mythology-note {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 2rem;
+        }
+
+        /* --- SUPPORT SECTION --- */
+        .support {
+            background-color: var(--bg-color);
+            padding: 6rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .support-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .email-box {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2.5rem;
+            border-radius: 24px;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .email-link {
+            font-size: 1.5rem;
+            font-family: var(--font-serif);
+            color: var(--accent-amber);
+            font-weight: 600;
+        }
+
+        .email-link:hover {
+            opacity: 0.8;
+        }
+
+        .email-link:focus-visible {
+            outline-offset: 4px;
+        }
+
+        .email-label {
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #111;
+        }
+
+        .footer-content-center {
+            padding: 2rem 0;
+        }
+
+        .footer-brand {
+            margin-bottom: 1rem;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.2rem;
+        }
+
+        .footer-links-center {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        .footer-links-center a:hover {
+            color: var(--accent-purple);
+        }
+
+        .footer-links-center a:focus-visible {
+            outline-offset: 4px;
+        }
+
+        .footer-copyright {
+            opacity: 0.3;
+            font-size: 0.8rem;
+        }
+
+        /* --- MODAL --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: var(--card-color);
+            border: 1px solid var(--accent-purple);
+            padding: 3rem;
+            border-radius: 24px;
+            max-width: 500px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-icon {
+            color: var(--accent-purple);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-family: var(--font-serif);
+        }
+
+        .modal-text {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn-full-width {
+            margin: 0;
+            width: 100%;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            padding: 0.5rem;
+        }
+
+        .modal-close:focus-visible {
+            outline-offset: 2px;
+        }
+
+        /* --- REDUCED MOTION SUPPORT --- */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                min-height: auto;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-top: 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-text p {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                margin-bottom: 2rem;
+            }
+
+            .hero-image::after {
+                width: 200px;
+                height: 300px;
+            }
+
+            .phone-frame {
+                width: 240px;
+                height: 480px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-quote {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                margin-right: 0;
+                margin-bottom: 0;
+                width: auto;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .hero-grid {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
+
+            .hero-visual {
+                margin-bottom: 2rem;
+            }
+
+            nav {
+                padding: 1rem 0;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .modal-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- NAV -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">R</div>
+                Ravn
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#support">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <main id="main">
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text fade-in-up">
+                <div class="hero-badge">
+                    <div class="hero-badge-dot"></div>
+                    Local-First · Privacy-Focused
+                </div>
+                <h1>Your <span>raven</span> for the <span class="raven">web</span></h1>
+                <p class="subtitle">Inspired by Odin's Huginn and Muninn, thought and memory, flying across the web and bringing knowledge back to you.</p>
+                <p>Save links from any app via share sheet. Organize into collections. Read them offline. No account. No cloud sync. No subscriptions. Just you and your curated web.</p>
+
+                <div class="cta-buttons" style="margin-top: 2.5rem;">
+                    <a href="https://apps.apple.com/us/app/ravn/id6745432150" class="btn" target="_blank" rel="noopener">Download for iOS</a>
+                    <button type="button" class="btn btn-outline" onclick="showAndroidModal()">Download for Android</button>
+                </div>
+            </div>
+
+            <div class="hero-visual fade-in-up delay-200">
+                <div class="phone-frame floating">
+                    <div class="notch"></div>
+                    <!-- REPLACED: CSS UI with actual Image -->
+                    <img src="screenshot.png" alt="Ravn App Screenshot" class="app-screenshot"
+                        onerror="this.style.display='none'">
+                </div>
+                <!-- Background Glow -->
+                <div class="glow"></div>
+            </div>
+        </div>
+    </header>
+    </main>
+
+    <!-- FEATURES GRID -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Everything you need, nothing you don't</h2>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <polyline points="16 6 12 2 8 6"/>
+                            <line x1="12" y1="2" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Share from Anywhere</h3>
+                    <p>No more copying and pasting. Save links from Safari, Twitter, Slack, any app, in one tap. Your reading list follows you everywhere.</p>
+                </div>
+
+                <div class="feature-card fade-in-up delay-100">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <h3>Collections</h3>
+                    <p>Build your own system. Reading List, Tech, Design, Inspiration, however you think, Ravn bends to it. No forced hierarchy, no rigid folders.</p>
+                </div>
+
+                <div class="feature-card fade-in-up delay-200">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </div>
+                    <h3>Full-Text Search</h3>
+                    <p>Find what you saved in seconds, not scroll through hundreds of links. Search by title, domain, or tags. Even works offline.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>PIN & Biometric Lock</h3>
+                    <p>Your links are yours alone. Lock Ravn behind Face ID, Touch ID, or a PIN. SHA-256 hashed, stored securely, not in the cloud.</p>
+                </div>
+
+                <div class="feature-card fade-in-up delay-100">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </div>
+                    <h3>Export Anywhere</h3>
+                    <p>Your data, your choice. Export everything as JSON, CSV, or Markdown. One click, full portability, no lock-in, ever.</p>
+                </div>
+
+                <div class="feature-card fade-in-up delay-200">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Truly Private</h3>
+                    <p>No accounts. No cloud sync. No tracking. Everything stays on your device. Ravn doesn't know what you save, because it never sees it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION -->
+    <section id="philosophy" class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <blockquote class="philosophy-quote">
+                    "Huginn and Muninn, <span>thought</span> and <span>memory</span>, flew across the world each day and returned with knowledge to share with Odin."
+                </blockquote>
+                <p>
+                    In Norse mythology, ravens were not just messengers. They were intelligence gatherers. They saw what was happening at the edges of the world and brought it back.
+                </p>
+                <p>
+                    Ravn works the same way. Every link you save is a piece of your web, curated, organized, and waiting for you. Not floating in some cloud server. Not fed to an algorithm. Right here, on your device.
+                </p>
+                <p class="mythology-note">
+                    Named with love for the Old Norse.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT SECTION -->
+    <section id="support" class="support">
+        <div class="container support-content">
+            <h2>Support</h2>
+            <p>Questions about Ravn, or need help? Get in touch directly.</p>
+
+            <div class="email-box">
+                <p class="email-label">Contact</p>
+                <a href="mailto:prengzi.redjon@gmail.com" class="email-link">prengzi.redjon@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content-center">
+            <p class="footer-brand">RAVN</p>
+            <div class="footer-links-center">
+                <a href="../index.html">Redjon Prengzi</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:prengzi.redjon@gmail.com">Support</a>
+            </div>
+            <p class="footer-copyright">&copy; 2026 Redjon Prengzi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Android Modal -->
+    <div id="androidModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
+            <h2 id="modal-title" class="modal-title">Coming Soon</h2>
+            <p class="modal-text">The Android version is currently in development. Join the waitlist or contact me directly for early access.</p>
+            <div class="modal-actions">
+                <a href="mailto:prengzi.redjon@gmail.com?subject=Ravn%20Android%20Access" class="btn btn-full-width">Join the Waitlist</a>
+                <button onclick="closeAndroidModal()" class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAndroidModal() {
+            const modal = document.getElementById('androidModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAndroidModal() {
+            const modal = document.getElementById('androidModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('androidModal');
+            if (event.target === modal) closeAndroidModal();
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') closeAndroidModal();
+        });
+    </script>
+</body>
+
+</html>
