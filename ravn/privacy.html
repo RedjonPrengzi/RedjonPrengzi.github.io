@@ -41,7 +41,7 @@
         a:hover { text-decoration: underline; }
         .container { max-width: 720px; margin: 0 auto; padding: 4rem 0; }
         .logo { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; margin-bottom: 3rem; display: flex; align-items: center; gap: 10px; }
-        .logo-icon { width: 28px; height: 28px; background: linear-gradient(135deg, var(--accent-purple), #7C3AED); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+        .logo-icon { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; }
         h1 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 0.5rem; }
         h2 { font-family: var(--font-serif); font-size: 1.4rem; margin: 2.5rem 0 1rem; color: var(--text-main); }
         h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-secondary); font-weight: 600; }
@@ -60,7 +60,7 @@
     <div class="container">
         <a href="index.html" class="back-link">← Back to Ravn</a>
         <div class="logo">
-            <div class="logo-icon">R</div>
+            <img src="icon.png" alt="Ravn" class="logo-icon">
             Ravn
         </div>
 
@@ -72,15 +72,16 @@
         <h2>Data Collection</h2>
         <p>Ravn stores all data locally on your device. Your links, collections, titles, descriptions, and any other content you save through Ravn never leaves your device. There is no cloud sync, no account system, and no way for us to access your data.</p>
 
-        <h2>Metadata & Analytics</h2>
-        <p>Ravn uses minimal third-party services that may collect limited, non-personal data:</p>
+        <h2>Ads & Tracking</h2>
+        <p>Ravn is free and supported by non-intrusive ads. The following third-party services are used:</p>
         <ul>
-            <li><strong>AdMob (Google):</strong> If ads are displayed, Google AdMob may collect device identifiers and usage data for ad targeting purposes. You can opt out of personalized ads in your device settings.</li>
-            <li><strong>Exponent (Expo Updates):</strong> Used to check for app updates. This service may log basic request metadata.</li>
+            <li><strong>Google AdMob:</strong> Serves ads within the app. AdMob may collect device identifiers and usage data for ad personalization. On iOS, Ravn will ask for your permission via the App Tracking Transparency prompt before accessing your device advertising identifier. You can decline this permission in the system prompt or revoke it at any time in your device settings (Settings &gt; Privacy &amp; Security &gt; Tracking).</li>
+            <li><strong>UMP Consent (Google):</strong> For users in the European Economic Area (EEA) and other regions with data protection laws, Ravn shows a GDPR consent form before loading any ads. Your consent choice is stored locally and can be changed in the app's Settings.</li>
+            <li><strong>Expo Updates (Exponent):</strong> Used to check for and deliver app updates. This service may log basic request metadata such as IP address.</li>
         </ul>
 
         <h2>Link Previews</h2>
-        <p>When you save a link, Ravn may fetch OpenGraph metadata (title, description, thumbnail) from the target URL to display a rich preview. This fetch is performed on-device and does not send any of your personal data to third parties beyond what the target website logs in their normal course.</p>
+        <p>When you save a link, Ravn fetches OpenGraph metadata (title, description, thumbnail) directly from the target website to display a rich preview. This request is made from your device to the website only. Ravn does not send your saved links or any personal data to any third-party service for this purpose. If no preview image is available, a placeholder is shown.</p>
 
         <h2>Secure Storage</h2>
         <p>If you enable PIN lock or biometric authentication, your PIN is hashed using SHA-256 with a unique salt and stored in the device secure enclave (iOS Keychain / Android Keystore). The plaintext PIN is never stored.</p>
