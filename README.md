@@ -1,17 +1,16 @@
-# Redjon Prengzi — Portfolio
+# Redjon Prengzi
 
-Native mobile developer focusing on software with deliberate clarity.
+I build mobile apps that do one thing well. I start with my own frustrations and build from there.
 
-### Focused Products
-- **[Logline](https://redjonprengzi.github.io/logline/)**: Story-first movie discovery.
-- **[QuitPilot](https://redjonprengzi.github.io/quitpilot/)**: A flexible dual-mode tool for tracking smoking habits and recovery.
-- **[The Daily Bar](https://redjonprengzi.github.io/dailyBars/)**: Technical lyrical analysis delivered daily.
-- **[Fastual](https://redjonprengzi.github.io/fastual/)**: Minimalist metabolic window tracking.
+## Projects
 
-### Principles
-- **Depth over bloat**: Native solutions for single-problem focus.
-- **Intentional Design**: Function-led aesthetics.
-- **Human Connection**: Direct lines, no corporate noise.
+- [Logline](https://redjonprengzi.github.io/logline/) - discover movies through story, not marketing. No posters, no trailers, just the plot summary
+- [Ravn](https://redjonprengzi.github.io/ravn/) - save links from any app, organize into collections. No account, no cloud
+- [QuitPilot](https://redjonprengzi.github.io/quitpilot/) - track smoking habits or monitor recovery milestones. A dual-mode tool for either stage
+- [Verbalyze](https://redjonprengzi.github.io/verbalyze/) - AI companions for mental wellness. Evidence-based, private, available 24/7
+- [Fastual](https://redjonprengzi.github.io/fastual/) - minimalist fasting timer. Know exactly when your body switches to burning fat
+- [The Daily Bar](https://redjonprengzi.github.io/dailyBars/) - one hand-picked rap verse every day with full technical breakdown of rhyme schemes
 
----
-© 2026 Crafted with Intent.
+## Contact
+
+prengzi.redjon@gmail.com
