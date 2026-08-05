@@ -93,7 +93,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Ravn",
-        "description": "A local-first, privacy-focused link collection app. Save links from anywhere, organize into collections, browse offline. No account. No cloud. Just you and your web.",
+        "description": "A link collection app. Save links from anywhere, sort them into collections, read them offline. Device-only, no account, no cloud.",
         "url": "https://redjonprengzi.github.io/ravn",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "iOS, Android",
@@ -145,7 +145,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Fastual",
-        "description": "Fasting simplified with minimalist timer and clear metabolic state visibility.",
+        "description": "A fasting timer that shows your metabolic state, without the calorie counter or social feed.",
         "url": "https://redjonprengzi.github.io/fastual",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "iOS, Android",
@@ -217,7 +217,7 @@
     <main id="main">
         <section class="mesh-gradient relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
             <div class="max-w-5xl space-y-12">
-                <div class="inline-block opacity-60">
+                <div class="inline-block">
                     <span class="font-serif italic text-lg text-slate-400">A collection of mobile projects</span>
                 </div>
                 <h1
@@ -227,7 +227,8 @@
                 <p
                     class="mx-auto max-w-2xl text-lg font-light leading-relaxed text-slate-400 md:text-xl font-sans tracking-wide">
                     I design and build native iOS and Android products in my spare time.
-                    Each app solves a real problem without the unnecessary complexity you find everywhere else.
+                    Each one does a single job and leaves out the feeds, notifications, and feature bloat
+                    the rest of the category ships by default.
                 </p>
                 <div class="flex flex-col items-center justify-center gap-10 pt-8 sm:flex-row">
                     <a class="group relative px-12 py-4" href="#work">
@@ -247,116 +248,109 @@
             <div class="mx-auto max-w-7xl relative z-10">
                 <div class="mb-32 text-center md:text-left">
                     <h2 class="font-serif text-3xl italic text-white md:text-5xl tracking-tight mb-6">The Collection</h2>
-                    <div class="h-px w-16 md:w-24 bg-primary mb-6 mx-auto md:mx-0"></div>
-                    <p class="max-w-xl text-slate-500 font-light tracking-widest text-xs md:text-sm uppercase">
-                        Each product started as a personal solution.
-                        Now they help users daily.
+                    <div class="h-px w-16 md:w-24 bg-white/20 mb-6 mx-auto md:mx-0"></div>
+                    <p class="max-w-xl text-slate-400 font-light tracking-widest text-xs md:text-sm uppercase">
+                        Each one started as a problem I couldn't leave alone.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-2">
-                    <div class="slab-card slab-card-featured group relative flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
-                        <div class="absolute top-6 right-6">
-                            <span class="text-[9px] uppercase tracking-[0.3em] text-purple-400/60 font-semibold">Featured</span>
-                        </div>
-                        <div class="mb-12 text-purple-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">share</span>
-                        </div>
-                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic tracking-tight">Ravn</h3>
-                        <p class="text-slate-400 leading-relaxed font-light text-lg italic">
-                            Your raven for the web. A local-first, privacy-focused link collection app,
-                            save from anywhere, organize into collections, browse offline. No account. No cloud.
-                            Named after Odin's Huginn and Muninn.
-                        </p>
-                        <div class="mt-12 flex flex-col items-center gap-3">
-                            <a class="text-[10px] uppercase tracking-[0.4em] text-purple-500 font-bold hover:text-purple-400 transition-colors"
-                                href="ravn">View Ravn -&gt;</a>
-                            <a class="text-[9px] uppercase tracking-[0.3em] text-slate-600 font-semibold hover:text-slate-400 transition-colors"
-                                href="https://apps.apple.com/us/app/ravn-save-organize-links/id6762544974" target="_blank" rel="noopener">Download on the App Store</a>
-                        </div>
+                <article class="slab-card slab-card-featured group relative flex flex-col items-center text-center p-8 md:p-16 mb-20" style="background:linear-gradient(145deg,#1f1012,#0a0608);border-color:rgba(239,68,68,0.22)">
+                    <div class="absolute top-6 right-6">
+                        <span class="text-[11px] uppercase tracking-[0.3em] text-red-400/70 font-semibold">Featured</span>
                     </div>
-                    <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm md:mt-24">
-                        <div class="mb-12 text-red-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">movie</span>
-                        </div>
-                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic tracking-tight">Logline</h3>
-                        <p class="text-slate-400 leading-relaxed font-light text-lg italic">
-                            Discover movies through story, not marketing.
-                            Logline strips away poster bias and budget spectacle to surface movies
-                            based on what matters: the script, the premise, the narrative craft.
-                        </p>
-                        <div class="mt-12 flex flex-col items-center gap-3">
-                            <a class="text-[10px] uppercase tracking-[0.4em] text-red-500 font-bold hover:text-red-400 transition-colors"
-                                href="logline">View Logline -&gt;</a>
-                            <a class="text-[9px] uppercase tracking-[0.3em] text-slate-600 font-semibold hover:text-slate-400 transition-colors"
-                                href="https://apps.apple.com/app/id6757087533" target="_blank" rel="noopener">Download on the App Store</a>
-                        </div>
+                    <div class="mb-10 text-red-500/80">
+                        <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">movie</span>
                     </div>
-                    <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
-                        <div class="mb-12 text-emerald-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">smoke_free</span>
-                        </div>
-                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic tracking-tight">QuitPilot</h3>
-                        <p class="text-slate-400 leading-relaxed font-light text-lg italic">
-                            Quitting isn't linear. QuitPilot meets you where you are.
-                            Track your progress with honest milestone tracking, or confront your habits
-                            with a dual-mode dashboard designed for the reality of breaking addiction.
-                        </p>
-                        <div class="mt-12 flex flex-col items-center gap-3">
-                            <a class="text-[10px] uppercase tracking-[0.4em] text-emerald-500 font-bold hover:text-emerald-400 transition-colors"
-                                href="quitpilot">View QuitPilot -&gt;</a>
-                            <a class="text-[9px] uppercase tracking-[0.3em] text-slate-600 font-semibold hover:text-slate-400 transition-colors"
-                                href="https://apps.apple.com/app/id6758869034" target="_blank" rel="noopener">Download on the App Store</a>
-                        </div>
+                    <h3 class="font-serif text-3xl md:text-4xl text-white mb-6 italic tracking-tight">Logline</h3>
+                    <p class="max-w-xl text-slate-400 leading-relaxed font-light text-lg">
+                        Discover movies through story, not marketing. Logline strips away poster bias
+                        and budget spectacle to surface films based on what matters: the script, the
+                        premise, the narrative craft.
+                    </p>
+                    <div class="mt-12 flex flex-col items-center gap-3">
+                        <a class="text-[11px] uppercase tracking-[0.3em] text-red-500 font-bold hover:text-red-400 transition-colors"
+                            href="https://apps.apple.com/app/id6757087533" target="_blank" rel="noopener">Download on the App Store</a>
+                        <a class="text-[11px] uppercase tracking-[0.2em] text-slate-400 font-medium hover:text-slate-200 transition-colors"
+                            href="logline">View Logline -&gt;</a>
                     </div>
-                    <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm md:mt-24">
-                        <div class="mb-12 text-cyan-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">psychology</span>
+                </article>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                    <article class="slab-card group flex flex-col items-center text-center p-6 md:p-8">
+                        <div class="mb-6 text-purple-500/80">
+                            <span class="material-symbols-outlined text-5xl md:text-6xl glyph-glow" aria-hidden="true">share</span>
                         </div>
-                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic tracking-tight">Verbalyze AI</h3>
-                        <p class="text-slate-400 leading-relaxed font-light text-lg italic">
-                            Personalized AI coaching and companionship for mental wellness. Evidence-based methods,
-                            privacy-first architecture, and support available 24/7.
+                        <h3 class="font-serif text-xl md:text-2xl text-white mb-3 italic tracking-tight">Ravn</h3>
+                        <p class="text-slate-400 leading-relaxed font-light text-sm mb-8 flex-grow">
+                            A device-only link collection app. Save from anywhere, sort into collections, read offline.
                         </p>
-                        <div class="mt-12 flex flex-col items-center gap-3">
-                            <a class="text-[10px] uppercase tracking-[0.4em] text-cyan-500 font-bold hover:text-cyan-400 transition-colors"
-                                href="verbalyze">View Verbalyze AI -&gt;</a>
-                            <a class="text-[9px] uppercase tracking-[0.3em] text-slate-600 font-semibold hover:text-slate-400 transition-colors"
-                                href="https://apps.apple.com/app/id6745432160" target="_blank" rel="noopener">Download on the App Store</a>
+                        <div class="flex flex-col items-center gap-2">
+                            <a class="text-[11px] uppercase tracking-[0.2em] text-purple-400 font-bold hover:text-purple-300 transition-colors"
+                                href="https://apps.apple.com/us/app/ravn-save-organize-links/id6762544974" target="_blank" rel="noopener">Download -&gt;</a>
+                            <a class="text-[11px] tracking-wide text-slate-400 font-medium hover:text-slate-200 transition-colors"
+                                href="ravn">View Ravn</a>
                         </div>
-                    </div>
-                    <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm">
-                        <div class="mb-12 text-cyan-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">timer</span>
+                    </article>
+                    <article class="slab-card group flex flex-col items-center text-center p-6 md:p-8">
+                        <div class="mb-6 text-emerald-500/80">
+                            <span class="material-symbols-outlined text-5xl md:text-6xl glyph-glow" aria-hidden="true">smoke_free</span>
                         </div>
-                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic tracking-tight">Fastual</h3>
-                        <p class="text-slate-400 leading-relaxed font-light text-lg italic">
-                            Fasting, simplified.
-                            A minimalist timer that gives you what matters: clear visibility into your
-                            metabolic state without the noise of calorie counters and social features.
+                        <h3 class="font-serif text-xl md:text-2xl text-white mb-3 italic tracking-tight">QuitPilot</h3>
+                        <p class="text-slate-400 leading-relaxed font-light text-sm mb-8 flex-grow">
+                            Quit smoking with honest milestone tracking and a dual-mode dashboard for the reality of addiction.
                         </p>
-                        <div class="mt-12 flex flex-col items-center gap-3">
-                            <a class="text-[10px] uppercase tracking-[0.4em] text-cyan-500 font-bold hover:text-cyan-400 transition-colors"
-                                href="fastual">View Fastual -&gt;</a>
-                            <a class="text-[9px] uppercase tracking-[0.3em] text-slate-600 font-semibold hover:text-slate-400 transition-colors"
-                                href="https://apps.apple.com/app/id6758233821" target="_blank" rel="noopener">Download on the App Store</a>
+                        <div class="flex flex-col items-center gap-2">
+                            <a class="text-[11px] uppercase tracking-[0.2em] text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
+                                href="https://apps.apple.com/app/id6758869034" target="_blank" rel="noopener">Download -&gt;</a>
+                            <a class="text-[11px] tracking-wide text-slate-400 font-medium hover:text-slate-200 transition-colors"
+                                href="quitpilot">View QuitPilot</a>
                         </div>
-                    </div>
-                    <div class="slab-card group flex flex-col items-center text-center p-8 md:p-16 rounded-sm md:mt-24">
-                        <div class="mb-12 text-amber-500/80">
-                            <span class="material-symbols-outlined text-6xl md:text-8xl glyph-glow" aria-hidden="true">history_edu</span>
+                    </article>
+                    <article class="slab-card group flex flex-col items-center text-center p-6 md:p-8">
+                        <div class="mb-6 text-cyan-500/80">
+                            <span class="material-symbols-outlined text-5xl md:text-6xl glyph-glow" aria-hidden="true">psychology</span>
                         </div>
-                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-6 italic tracking-tight">The Daily Bar</h3>
-                        <p class="text-slate-400 leading-relaxed font-light text-lg italic">
-                            One critically acclaimed verse every 24 hours. A technical breakdown of rhyme
-                            schemes and lyrical architecture, cut clean of the industry noise.
+                        <h3 class="font-serif text-xl md:text-2xl text-white mb-3 italic tracking-tight">Verbalyze AI</h3>
+                        <p class="text-slate-400 leading-relaxed font-light text-sm mb-8 flex-grow">
+                            An AI companion for mental wellness. It talks through what is on your mind,
+                            keeps it private, and is there at 3am when nothing else is.
                         </p>
-                        <div class="mt-12 flex flex-col items-center gap-3">
-                            <a class="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-bold hover:text-amber-400 transition-colors"
-                                href="dailyBars">View Daily Bar -&gt;</a>
-                            <a class="text-[9px] uppercase tracking-[0.3em] text-slate-600 font-semibold hover:text-slate-400 transition-colors"
-                                href="https://apps.apple.com/app/id6757107337" target="_blank" rel="noopener">Download on the App Store</a>
+                        <div class="flex flex-col items-center gap-2">
+                            <a class="text-[11px] uppercase tracking-[0.2em] text-cyan-400 font-bold hover:text-cyan-300 transition-colors"
+                                href="https://apps.apple.com/app/id6745432160" target="_blank" rel="noopener">Download -&gt;</a>
+                            <a class="text-[11px] tracking-wide text-slate-400 font-medium hover:text-slate-200 transition-colors"
+                                href="verbalyze">View Verbalyze AI</a>
                         </div>
-                    </div>
+                    </article>
+                    <article class="slab-card group flex flex-col items-center text-center p-6 md:p-8">
+                        <div class="mb-6 text-cyan-500/80">
+                            <span class="material-symbols-outlined text-5xl md:text-6xl glyph-glow" aria-hidden="true">timer</span>
+                        </div>
+                        <h3 class="font-serif text-xl md:text-2xl text-white mb-3 italic tracking-tight">Fastual</h3>
+                        <p class="text-slate-400 leading-relaxed font-light text-sm mb-8 flex-grow">
+                            A fasting timer that shows your metabolic state and leaves out the calorie
+                            counter and social feed.
+                        </p>
+                        <div class="flex flex-col items-center gap-2">
+                            <a class="text-[11px] uppercase tracking-[0.2em] text-cyan-400 font-bold hover:text-cyan-300 transition-colors"
+                                href="https://apps.apple.com/app/id6758233821" target="_blank" rel="noopener">Download -&gt;</a>
+                            <a class="text-[11px] tracking-wide text-slate-400 font-medium hover:text-slate-200 transition-colors"
+                                href="fastual">View Fastual</a>
+                        </div>
+                    </article>
+                    <article class="slab-card group flex flex-col items-center text-center p-6 md:p-8">
+                        <div class="mb-6 text-amber-500/80">
+                            <span class="material-symbols-outlined text-5xl md:text-6xl glyph-glow" aria-hidden="true">history_edu</span>
+                        </div>
+                        <h3 class="font-serif text-xl md:text-2xl text-white mb-3 italic tracking-tight">The Daily Bar</h3>
+                        <p class="text-slate-400 leading-relaxed font-light text-sm mb-8 flex-grow">
+                            One critically acclaimed verse every 24 hours. A technical breakdown of rhyme and lyrical architecture.
+                        </p>
+                        <div class="flex flex-col items-center gap-2">
+                            <a class="text-[11px] uppercase tracking-[0.2em] text-amber-400 font-bold hover:text-amber-300 transition-colors"
+                                href="https://apps.apple.com/app/id6757107337" target="_blank" rel="noopener">Download -&gt;</a>
+                            <a class="text-[11px] tracking-wide text-slate-400 font-medium hover:text-slate-200 transition-colors"
+                                href="dailyBars">View Daily Bar</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -365,19 +359,20 @@
             <div class="mx-auto max-w-4xl relative z-10">
                 <div class="mb-20 text-center">
                     <h2 class="font-serif text-3xl italic text-white md:text-5xl tracking-tight mb-6">The Philosophy</h2>
-                    <div class="h-px w-16 md:w-24 bg-primary mx-auto mb-6"></div>
+                    <div class="h-px w-16 md:w-24 bg-white/20 mx-auto mb-6"></div>
                 </div>
-                <div class="space-y-8 text-center">
-                    <p class="text-slate-400 text-lg leading-relaxed font-light tracking-wide italic">
+                <div class="space-y-12 text-center">
+                    <p
+                        class="font-serif text-5xl md:text-6xl italic text-white leading-tight tracking-tight text-balanced mb-12">
                         Clarity is the ultimate feature.
                     </p>
-                    <p class="text-slate-500 text-base leading-relaxed font-light tracking-wide">
-                        Most apps are built to maximize engagement. Endless feeds, notifications, complexity
-                        masquerading as value.
-                        I build for the opposite: intentional products that respect your time, solve one problem
-                        completely, and get out of the way.
-                        Every feature I ship answers one question: "Does this make the core job easier?"
-                        The result is software you don't think about. You just use it.
+                    <p
+                        class="mx-auto max-w-2xl text-slate-400 text-base md:text-lg leading-relaxed font-light tracking-wide">
+                        Most apps want your attention. They run feeds, push notifications, and dress up
+                        feature bloat as value. I build the opposite: one app per problem, nothing extra,
+                        and it gets out of the way once the job is done. Every feature has to earn its
+                        place by making the core task easier. The result is software you don't think about.
+                        You just use it.
                     </p>
                 </div>
             </div>
@@ -390,8 +385,8 @@
                         matters.</h2>
                     <div class="flex flex-col items-center gap-8">
                         <p class="max-w-xl text-slate-400 font-light text-lg tracking-wide text-balanced italic">
-                            Whether you have an idea for a collaboration or just want to talk about
-                            building products with clear intent.
+                            If you have something to build, or just want to compare notes on software that
+                            doesn't try to do everything, write to me here.
                         </p>
                         <a class="email-glow group relative inline-block"
                             href="mailto:prengzi.redjon@gmail.com?subject=Project%20Inquiry:%20[Your%20App%20Idea]">
@@ -402,31 +397,31 @@
                             <span
                                 class="block h-px w-0 bg-white/40 transition-all duration-700 group-hover:w-full mt-2"></span>
                         </a>
-                        <p class="text-slate-600 text-sm tracking-wide">Response within 48 hours <span aria-hidden="true">→</span></p>
+                        <p class="text-slate-400 text-sm tracking-wide">Response within 48 hours <span aria-hidden="true">→</span></p>
                     </div>
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-8 pt-8">
-                    <a class="text-slate-500 hover:text-slate-300 transition-colors text-sm uppercase tracking-[0.3em]"
+                    <a class="text-slate-400 hover:text-slate-200 transition-colors text-sm uppercase tracking-[0.3em]"
                         href="https://github.com/RedjonPrengzi" target="_blank" rel="noopener">
                         GitHub
                     </a>
-                    <a class="text-slate-500 hover:text-slate-300 transition-colors text-sm uppercase tracking-[0.3em]"
+                    <a class="text-slate-400 hover:text-slate-200 transition-colors text-sm uppercase tracking-[0.3em]"
                         href="https://x.com/RediPrengzi" target="_blank" rel="noopener">
                         X / Twitter
                     </a>
-                    <a class="text-slate-500 hover:text-slate-300 transition-colors text-sm uppercase tracking-[0.3em]"
+                    <a class="text-slate-400 hover:text-slate-200 transition-colors text-sm uppercase tracking-[0.3em]"
                         href="https://www.linkedin.com/in/redjon-prengzi-18a8989b/" target="_blank" rel="noopener">
                         LinkedIn
                     </a>
                 </div>
             </div>
         </section>
-        <footer class="bg-depth-black px-6 py-32 border-t border-white/5">
-            <div class="mx-auto max-w-7xl flex flex-col items-center gap-20">
+        <footer class="bg-depth-black px-6 py-20 border-t border-white/5">
+            <div class="mx-auto max-w-7xl flex flex-col items-center gap-10">
                 <div class="text-center space-y-6">
                     <p class="font-serif italic text-white text-2xl opacity-60">Redjon Prengzi</p>
                     <div class="h-px w-8 bg-white/10 mx-auto"></div>
-                    <p class="text-[10px] uppercase tracking-[0.5em] text-slate-600 font-bold">
+                    <p class="text-[11px] uppercase tracking-[0.5em] text-slate-600 font-bold">
                         © 2026 Crafted with Intent
                     </p>
                 </div>

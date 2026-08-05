@@ -82,8 +82,8 @@ body {
 }
 
 .slab-card-featured {
-  background: linear-gradient(145deg, #1a0f0f, #0a0707);
-  border-color: rgba(239, 68, 68, 0.2);
+  background: linear-gradient(145deg, #16161c, #08080c);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 *:focus-visible {

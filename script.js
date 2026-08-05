@@ -5,23 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
 
-    function toggleMenu() {
-        const isMenuOpen = mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex');
+    if (!mobileMenuBtn || !mobileMenu) return;
 
-        // Toggle icons
-        if (!isMenuOpen) {
-            // Menu is now open
-            menuIcon.classList.add('hidden');
-            closeIcon.classList.remove('hidden');
-        } else {
-            // Menu is now closed
-            menuIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
-        }
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    let lastFocusedElement = null;
 
-        // Update aria-expanded state
-        mobileMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    function openMenu() {
+        lastFocusedElement = document.activeElement;
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        if (menuLinks.length > 0) menuLinks[0].focus();
     }
 
     function closeMenu() {
@@ -30,12 +26,45 @@ document.addEventListener('DOMContentLoaded', () => {
         menuIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        if (lastFocusedElement) lastFocusedElement.focus();
     }
 
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-
-        // Make closeMobileMenu available globally
-        window.closeMobileMenu = closeMenu;
+    function toggleMenu() {
+        if (mobileMenu.classList.contains('hidden')) openMenu();
+        else closeMenu();
     }
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+            closeMenu();
+            mobileMenuBtn.focus();
+        }
+    });
+
+    // Close on outside tap (backdrop click — the menu fills the screen)
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) closeMenu();
+    });
+
+    // Focus trap: cycle Tab within the menu while open
+    mobileMenu.addEventListener('keydown', (e) => {
+        if (e.key !== 'Tab' || mobileMenu.classList.contains('hidden') || menuLinks.length === 0) return;
+
+        const firstLink = menuLinks[0];
+        const lastLink = menuLinks[menuLinks.length - 1];
+
+        if (e.shiftKey && document.activeElement === firstLink) {
+            e.preventDefault();
+            lastLink.focus();
+        } else if (!e.shiftKey && document.activeElement === lastLink) {
+            e.preventDefault();
+            firstLink.focus();
+        }
+    });
+
+    // Make closeMobileMenu available globally (used by inline onclick handlers on nav links)
+    window.closeMobileMenu = closeMenu;
 });
