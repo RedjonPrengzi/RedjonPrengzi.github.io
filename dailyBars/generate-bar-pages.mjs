@@ -126,40 +126,50 @@ function renderVerse(verse, highlights) {
 
 // --- Page templates
 
-function chrome(prefix) {
-  return {
-    head: `    <link rel="preconnect" href="https://fonts.googleapis.com">
+// Every page sits at /dailyBars/bar/<id>/, so site assets are always two up.
+// There is deliberately no link onward to another bar: the app's premise is one
+// verse a day, and a browsable catalogue on the web undercuts it.
+const PREFIX = '../../';
+
+const HEAD = `    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${prefix}style.css">
-    <link rel="stylesheet" href="${prefix}bar.css">`,
-    nav: `    <nav class="navbar">
+    <link rel="stylesheet" href="${PREFIX}style.css">
+    <link rel="stylesheet" href="${PREFIX}bar.css">`;
+
+const NAV = `    <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo"><a href="${prefix}index.html" style="color:inherit;text-decoration:none">THE DAILY BAR</a></div>
+            <div class="logo"><a href="${PREFIX}index.html" style="color:inherit;text-decoration:none">THE DAILY BAR</a></div>
             <ul class="nav-links">
-                <li><a href="${prefix}index.html">Home</a></li>
-                <li><a href="${prefix}bar/index.html">All Bars</a></li>
+                <li><a href="${PREFIX}index.html">Home</a></li>
                 <li><a href="${APP_STORE_URL}" class="btn-outline" target="_blank" rel="noopener">Get the App</a></li>
             </ul>
         </div>
-    </nav>`,
-    footer: `    <footer>
+    </nav>`;
+
+const FOOTER = `    <footer>
         <div class="container footer-content-center">
             <p class="footer-brand">THE DAILY BAR</p>
             <div class="footer-links-center">
-                <a href="${prefix}index.html">Daily Bars</a>
-                <a href="${prefix}privacy-policy.html">Privacy</a>
-                <a href="${prefix}terms.html">Terms</a>
+                <a href="${PREFIX}index.html">Daily Bars</a>
+                <a href="${PREFIX}privacy-policy.html">Privacy</a>
+                <a href="${PREFIX}terms.html">Terms</a>
                 <a href="mailto:prengzi.redjon@gmail.com">Support</a>
             </div>
             <p class="footer-copyright">&copy; 2026 Redjon Prengzi.</p>
         </div>
-    </footer>`,
-  };
-}
+    </footer>`;
 
-function barPage(bar, prev, next) {
-  const { head, nav, footer } = chrome('../../');
+// Pinned to the bottom because iOS Safari draws the Smart App Banner at the top.
+const INSTALL_BAR = `    <div class="install-bar">
+        <div class="install-copy">
+            <strong>Daily Bars</strong>
+            <span>One hand-picked verse a day, broken down like studio notes.</span>
+        </div>
+        <a href="${APP_STORE_URL}" class="btn-store" target="_blank" rel="noopener">Get the App</a>
+    </div>`;
+
+function barPage(bar) {
   const url = `${BASE}/bar/${bar.id}/`;
   const title = `"${bar.songTitle}" by ${bar.artist} — Rhyme Scheme Breakdown | Daily Bars`;
   const description = `${bar.verse.replace(/\s+/g, ' ').slice(0, 150).trim()}…`;
@@ -173,6 +183,8 @@ function barPage(bar, prev, next) {
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}">
     <link rel="canonical" href="${url}">
+    <!-- Native Safari banner: reads OPEN when the app is installed, VIEW when it isn't. -->
+    <meta name="apple-itunes-app" content="app-id=6757107337">
     <meta property="og:type" content="article">
     <meta property="og:url" content="${url}">
     <meta property="og:title" content="${escapeHtml(`"${bar.songTitle}" — ${bar.artist}`)}">
@@ -184,12 +196,12 @@ function barPage(bar, prev, next) {
     <meta name="twitter:description" content="${escapeHtml(description)}">
     <meta name="twitter:image" content="${OG_IMAGE}">
     <meta name="twitter:creator" content="@RediPrengzi">
-${head}
+${HEAD}
 </head>
 
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
-${nav}
+${NAV}
 
     <main id="main" class="bar-main">
         <div class="container">
@@ -215,73 +227,11 @@ ${nav}
                 <p>Get one hand-picked verse every day, broken down like studio notes.</p>
                 <a href="${APP_STORE_URL}" class="btn-store" target="_blank" rel="noopener">Download for iOS</a>
             </div>
-
-            <nav class="bar-nav" aria-label="Bar navigation">
-                ${prev ? `<a href="../${prev.id}/">&larr; ${escapeHtml(prev.songTitle)}</a>` : '<span></span>'}
-                <a href="../">All Bars</a>
-                ${next ? `<a href="../${next.id}/">${escapeHtml(next.songTitle)} &rarr;</a>` : '<span></span>'}
-            </nav>
         </div>
     </main>
 
-${footer}
-</body>
-
-</html>
-`;
-}
-
-function indexPage(bars) {
-  const { head, nav, footer } = chrome('../');
-  const url = `${BASE}/bar/`;
-  const description = `Every verse broken down in Daily Bars — ${bars.length} hand-picked rap bars with colour-coded rhyme schemes and technical analysis.`;
-
-  const cards = bars
-    .map(
-      (bar) => `                <a class="bar-index-card" href="${escapeHtml(bar.id)}/">
-                    <div class="song">${escapeHtml(bar.songTitle)}</div>
-                    <div class="artist">${escapeHtml(bar.artist)}</div>
-                </a>`,
-    )
-    .join('\n');
-
-  return `<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Bars — Rhyme Scheme Breakdowns | Daily Bars</title>
-    <meta name="description" content="${escapeHtml(description)}">
-    <link rel="canonical" href="${url}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="${url}">
-    <meta property="og:title" content="All Bars — Rhyme Scheme Breakdowns">
-    <meta property="og:description" content="${escapeHtml(description)}">
-    <meta property="og:image" content="${OG_IMAGE}">
-    <meta property="og:site_name" content="The Daily Bar by Redjon Prengzi">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="${OG_IMAGE}">
-${head}
-</head>
-
-<body>
-    <a href="#main" class="skip-link">Skip to main content</a>
-${nav}
-
-    <main id="main" class="bar-main">
-        <div class="container">
-            <p class="bar-eyebrow">The Catalog</p>
-            <h1 class="bar-title">All Bars</h1>
-            <p class="bar-artist">${bars.length} verses, each with a full rhyme-scheme breakdown.</p>
-
-            <div class="bar-index-grid">
-${cards}
-            </div>
-        </div>
-    </main>
-
-${footer}
+${FOOTER}
+${INSTALL_BAR}
 </body>
 
 </html>
@@ -292,10 +242,8 @@ async function updateSitemap(bars) {
   const path = join(ROOT, 'sitemap.xml');
   const today = new Date().toISOString().slice(0, 10);
 
-  const entries = [
-    `${BASE}/bar/`,
-    ...bars.map((bar) => `${BASE}/bar/${bar.id}/`),
-  ]
+  const entries = bars
+    .map((bar) => `${BASE}/bar/${bar.id}/`)
     .map(
       (loc) => `  <url>
     <loc>${loc}</loc>
@@ -332,20 +280,15 @@ async function main() {
   await rm(OUT_DIR, { recursive: true, force: true });
   await mkdir(OUT_DIR, { recursive: true });
 
-  for (const [index, bar] of bars.entries()) {
+  for (const bar of bars) {
     const dir = join(OUT_DIR, bar.id);
     await mkdir(dir, { recursive: true });
-    await writeFile(
-      join(dir, 'index.html'),
-      barPage(bar, bars[index - 1], bars[index + 1]),
-      'utf8',
-    );
+    await writeFile(join(dir, 'index.html'), barPage(bar), 'utf8');
   }
 
-  await writeFile(join(OUT_DIR, 'index.html'), indexPage(bars), 'utf8');
   await updateSitemap(bars);
 
-  console.log(`Generated ${bars.length} bar pages + index, and updated sitemap.xml`);
+  console.log(`Generated ${bars.length} bar pages and updated sitemap.xml`);
 }
 
 await main();
