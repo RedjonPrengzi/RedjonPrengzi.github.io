@@ -81,6 +81,24 @@
     margin-bottom: 1.25rem;
 }
 
+.footer-rights {
+    max-width: 620px;
+    margin: 1rem auto 0;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.footer-rights a {
+    color: var(--text-muted);
+    text-decoration: underline;
+}
+
+.footer-rights a:hover,
+.footer-rights a:focus-visible {
+    color: var(--brand-orange);
+}
+
 /* Sticky install prompt. Sits at the bottom so it never collides with the
    Smart App Banner that iOS Safari draws at the top. */
 .install-bar {
