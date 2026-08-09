@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["46D3DQCLYZ.com.redpre.dailybars"],
+        "components": [
+          {
+            "/": "/dailyBars/bar/*",
+            "comment": "Shared bar links open the Daily Bars app"
+          }
+        ]
+      }
+    ]
+  }
+}

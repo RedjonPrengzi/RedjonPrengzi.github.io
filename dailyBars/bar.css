@@ -1,0 +1,141 @@
+/* Per-bar pages. Extends dailyBars/style.css — variables and shared
+   components (navbar, footer, buttons) come from there. */
+
+.bar-main {
+    padding: 9rem 0 5rem;
+}
+
+.bar-eyebrow {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: var(--brand-orange);
+    margin-bottom: 0.75rem;
+}
+
+.bar-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.bar-artist {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.bar-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: 2.5rem;
+}
+
+.bar-verse {
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    line-height: 2;
+    white-space: pre-wrap;
+}
+
+/* Rhyme groups mirror the app's dark palette so the site and the app read the
+   same. The glow is what makes the colour lift off a near-black background. */
+.r {
+    font-weight: 700;
+}
+
+.r1 { color: #F472B6; text-shadow: 0 0 8px #F472B6; }
+.r2 { color: #22D3EE; text-shadow: 0 0 8px #22D3EE; }
+.r3 { color: #A3E635; text-shadow: 0 0 8px #A3E635; }
+.r4 { color: #AD5DF8; text-shadow: 0 0 8px #AD5DF8; }
+.r5 { color: #FACC15; text-shadow: 0 0 8px #FACC15; }
+.r6 { color: #FB923C; text-shadow: 0 0 8px #FB923C; }
+.r7 { color: #60A5FA; text-shadow: 0 0 8px #60A5FA; }
+.r8 { color: #F87171; text-shadow: 0 0 8px #F87171; }
+
+.bar-subhead {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    color: var(--brand-orange);
+    margin-bottom: 0.75rem;
+}
+
+.bar-panel p {
+    color: var(--text-muted);
+}
+
+.bar-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.bar-cta p {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.bar-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.bar-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.bar-nav a:hover,
+.bar-nav a:focus-visible {
+    color: var(--brand-orange);
+}
+
+/* Index of every bar */
+.bar-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.bar-index-card {
+    display: block;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.bar-index-card:hover,
+.bar-index-card:focus-visible {
+    border-color: var(--brand-orange);
+    transform: translateY(-2px);
+}
+
+.bar-index-card .song {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bar-index-card .artist {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
