@@ -1,189 +1,203 @@
 ---
 name: Redjon Prengzi Portfolio
-description: Dark editorial app-showcase hub for a single-purpose mobile app studio.
+description: Charcoal developer studio with focused app showcases and a warm desk image.
 colors:
-  depth-black: "#030303"
-  depth-charcoal: "#0a0a0c"
-  mesh-1: "#0f172a"
-  mesh-2: "#1e1b4b"
-  mesh-3: "#020617"
-  ink-bright: "#ffffff"
-  ink-primary: "oklch(70.4% 0.04 256.788)"
-  ink-secondary: "oklch(44.6% 0.043 257.281)"
-  editorial-purple: "oklch(62.7% 0.265 303.9)"
-  editorial-red: "oklch(63.7% 0.237 25.331)"
-  editorial-emerald: "oklch(69.6% 0.17 162.48)"
-  editorial-cyan: "oklch(71.5% 0.143 215.221)"
-  editorial-amber: "oklch(76.9% 0.188 70.08)"
+  background: "#0a0a0b"
+  foreground: "#f4f4f5"
+  muted: "#a1a1aa"
+  line: "#ffffff1a"
+  lavender: "#b6a5dc"
+  logline: "#f0515a"
+  ravn: "#ad90ff"
+  quitpilot: "#3cc6a6"
+  verbalyze: "#35cfff"
+  fastual: "#34dc81"
+  daily-bar: "#ffb31f"
 typography:
   display:
-    fontFamily: "'Playfair Display', Georgia, serif"
-    fontWeight: 300
-    lineHeight: 1.25
-    letterSpacing: "-0.025em"
-  display-italic:
-    fontFamily: "'Playfair Display', Georgia, serif"
-    fontWeight: 400
-    fontStyle: italic
-    lineHeight: 1.25
-    letterSpacing: "-0.025em"
-  body:
-    fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif"
-    fontWeight: 300
-    lineHeight: 1.625
-    letterSpacing: "0.025em"
-  label:
-    fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif"
+    fontFamily: "'Bricolage Grotesque', sans-serif"
+    fontSize: "96px"
+    fontWeight: 600
+    lineHeight: 1.04
+    letterSpacing: "-0.03125em"
+  headline:
+    fontFamily: "'Bricolage Grotesque', sans-serif"
+    fontSize: "64px"
+    fontWeight: 600
+    lineHeight: 1.07
+    letterSpacing: "-0.03em"
+  app-statement:
+    fontFamily: "'Bricolage Grotesque', sans-serif"
+    fontSize: "46px"
     fontWeight: 700
-    fontSize: "0.6875rem"
-    letterSpacing: "0.3em"
-    textTransform: uppercase
+    lineHeight: 1.04
+    letterSpacing: "-0.03em"
+  title:
+    fontFamily: "'Bricolage Grotesque', sans-serif"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: "-0.03em"
+  body:
+    fontFamily: "'Bricolage Grotesque', sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.55
+  action:
+    fontFamily: "'Bricolage Grotesque', sans-serif"
+    fontSize: "17px"
+    fontWeight: 600
 rounded:
-  none: "0"
-  sm: "0.25rem"
-  md: "0.375rem"
+  panel: "36px"
+  panel-mobile: "28px"
+  badge: "14px"
+  pill: "999px"
 spacing:
-  base: "0.25rem"
-  section-y: "6rem"
-  section-y-lg: "10rem"
-  container-max: "80rem"
+  small: "14px"
+  medium: "24px"
+  large: "28px"
+  panel-gap: "32px"
+  broad: "48px"
+  spacious: "64px"
+components:
+  button-light:
+    backgroundColor: "{colors.foreground}"
+    textColor: "{colors.background}"
+    typography: "{typography.action}"
+    rounded: "{rounded.pill}"
+    padding: "16px 28px"
+  button-light-hover:
+    backgroundColor: "{colors.lavender}"
+  button-outline:
+    textColor: "{colors.foreground}"
+    rounded: "{rounded.pill}"
+    padding: "14px 24px"
+  app-panel:
+    textColor: "{colors.foreground}"
+    rounded: "{rounded.panel}"
+    padding: "64px 80px"
+  app-panel-mobile:
+    rounded: "{rounded.panel-mobile}"
+    padding: "32px 24px"
 ---
 
 # Design System: Redjon Prengzi Portfolio
 
 ## Overview
 
-**Creative North Star: "The Editorial Sanctum"**
+**Creative North Star: "Developer Desk"**
 
-A dark editorial publication that happens to be a website. The page reads like a curated print folio: a Playfair Display italic voice carries every peak moment, Plus Jakarta Sans keeps the body quiet and legible, and the whole thing sits on a near-black ground (`#030303`) that lets type and a single accent hue do the work. Restraint is the thesis the product sells ("Clarity is the ultimate feature"), and the visual system has to embody it, not just decorate it.
+A charcoal developer studio: warm desk imagery introduces the maker, while generous tinted panels let the shipped apps carry the evidence. Bricolage Grotesque supplies a direct, slightly informal voice across the whole homepage. Large, tightly tracked statements sit beside readable supporting copy and rounded actions.
 
-Depth is structural, not decorative. Slab shadows (large offset, soft blur, faint top-left highlight) are how cards separate from the mesh-gradient atmosphere and how the eye learns what is interactive. The accent hues, one per app, are scarce on purpose — they appear only on the glyph, the primary call-to-action, and a glow, and nowhere else. The system has no light mode by commitment; the near-black ground is the stage, not a choice.
+Restraint remains the product commitment: each app solves one useful job, and the page gives each job space to be understood. The desk scene is an original generated atmospheric illustration, not documentation of the developer's actual workspace. Real app icons and screenshots belong to the catalogue.
 
-The anti-reference is the engagement-maximizing app aesthetic the catalog exists to reject: bright whites, saturated gradients, card grids of equal weight, and accent color sprayed across every surface. Here, atmosphere comes from layered radial meshes, authority comes from the serif italic, and a single accent per surface carries identity without volume.
+This document describes the current homepage only, extracted from `index.html` and `src/input.css` (compiled to `style.css`). The app subpages retain independent existing visual systems; these tokens do not authorize restyling them. The approved direction and homepage composition live in `.impeccable/surfaces/index-html.md`. Older homepage type and slab descriptions in `PRODUCT.md` are historical; durable product truth, routes, and evidence constraints still apply.
 
 **Key Characteristics:**
-- Dark-only editorial palette on `#030303`; no light mode.
-- Playfair Display (serif, italic-as-emphasis) for display; Plus Jakarta Sans for body and labels.
-- One accent hue per app surface, used on ≤3 elements (glyph, primary CTA, optional glow).
-- Structural slab shadows carry depth; mesh gradients carry atmosphere.
-- Wide letter-spacing (`0.3em–0.5em`) and uppercase on micro-labels; tight tracking (`-0.025em`) on display.
-- Italic is a peak-only device, never body copy.
+- Charcoal ground, bright ink, muted supporting copy, and lavender emphasis.
+- One Bricolage Grotesque family with size and weight defining the hierarchy.
+- Broad rounded panels, pill actions, and quiet hairline boundaries.
+- App-specific tonal surfaces with actual app imagery.
+- Color and underline responses instead of moving or shadow-lifting cards.
 
 ## Colors
 
-A single near-black ground carries the whole system; five editorial accents provide per-app identity, each used sparingly on its own surface.
+The palette combines a neutral charcoal studio with a soft lavender accent and app-owned color tints. Frontmatter values are normative; the source custom properties retain the same names for the shared colors.
 
 ### Primary
-- **Depth Black** (`#030303`): the page ground and the brand `theme-color`. Every section either sits on this flat or layers a mesh gradient over it.
-- **Ink Bright** (`#ffffff`): display type, primary CTA text, and the hover terminal state.
+- **Studio Lavender** (`lavender`): hero emphasis, primary action hover, and visible keyboard focus.
 
-### Secondary (the per-app accent family)
-Each app owns one hue, applied to its glyph, its primary "Download" CTA, and its glyph-glow. The hue is never used on body copy, borders, or backgrounds outside its app surface.
-- **Editorial Purple** (`oklch(62.7% 0.265 303.9)`): Ravn.
-- **Editorial Red** (`oklch(63.7% 0.237 25.331)`): Logline (currently the featured app).
-- **Editorial Emerald** (`oklch(69.6% 0.17 162.48)`): QuitPilot.
-- **Editorial Cyan** (`oklch(71.5% 0.143 215.221)`): Verbalyze AI and Fastual (shared hue).
-- **Editorial Amber** (`oklch(76.9% 0.188 70.08)`): The Daily Bar.
+### Secondary
+- **Logline Coral**, **Ravn Lilac**, **QuitPilot Teal**, **Verbalyze Cyan**, **Fastual Green**, and **Daily Bar Amber**: corresponding app category copy, feature checks, and softly tinted panel atmosphere. Each panel also uses its own muted supporting ink and dark tint in the source; those contextual mixtures are not separate global colors.
 
-### Neutral (the ink ramp)
-- **Ink Primary** (`oklch(70.4% 0.04 256.788)`, slate-400): body copy and secondary text. The AA-passing shade against `#030303`.
-- **Ink Secondary** (`oklch(44.6% 0.043 257.281)`, slate-600): footer copyright and the quietest micro-labels only.
+### Neutral
+- **Studio Charcoal** (`background`): page ground, dark action text, and header contact background.
+- **Bright Ink** (`foreground`): headlines, primary text, and light pill actions.
+- **Muted Ink** (`muted`): section descriptions, approach copy, and footer supporting text.
+- **Quiet Line** (`line`): panel outlines, catalogue bridge, principles divider, and footer divider.
 
 ### Named Rules
-**The One Hue Rule.** A single accent hue appears on any given app surface — on the glyph, the primary CTA, and the glow, and nowhere else. Its scarcity is the point; spraying an accent across borders, backgrounds, or body copy breaks the system.
-
-**The Body-Ink Floor Rule.** Body and secondary text uses Ink Primary (slate-400, oklch 70.4%) or lighter. Ink Secondary (slate-500/600) fails WCAG AA against `#030303` and is reserved for non-essential micro-labels like the footer copyright.
+**The App-Owned Color Rule.** Keep a panel's category, feature checks, and atmosphere tied to that app's accent; primary download actions remain light for consistent recognition.
 
 ## Typography
 
-**Display Font:** Playfair Display (with Georgia, serif)
-**Body Font:** Plus Jakarta Sans (with system-ui, sans-serif)
+**Display Font:** Bricolage Grotesque (sans-serif fallback)
+**Body Font:** Bricolage Grotesque (sans-serif fallback)
 
-**Character:** A serif/sans pairing where the serif italic is the personality and the sans is the stagehand. Playfair Display italic carries every peak — hero emphasis, section titles, the thesis line, the contact headline — and never appears in body copy. Plus Jakarta Sans keeps everything else quiet, light-weight, and legible, so the italic moments stay special.
+**Character:** A single expressive sans family avoids a decorative secondary voice. Big statements are compact and tightly tracked; supporting paragraphs keep normal tracking and relaxed leading.
 
 ### Hierarchy
-- **Display** (Playfair, light 300, `text-8xl`/`6rem`–`text-9xl`/`8rem`, line-height 1.25, tracking `-0.025em`): hero and contact headlines only. The page's loudest type.
-- **Display Italic** (Playfair, normal 400, italic, same scale): the emphasis device inside display type (e.g., the italic "thing" in the hero, italic section titles). Peak-only.
-- **Thesis** (Playfair, italic, `text-5xl`/`3rem`–`text-6xl`/`3.75rem`, tracking tight, `text-wrap: balance`): the single manifesto line per section ("Clarity is the ultimate feature."). One per scroll.
-- **Title** (Playfair, italic, `text-2xl`–`text-4xl`, tracking tight): app card names and section sub-headings.
-- **Body** (Plus Jakarta Sans, light 300, `text-base`/`1rem`–`text-lg`/`1.125rem`, line-height 1.625, tracking `0.025em`, measure 65–75ch): all paragraph copy. Never italic.
-- **Label** (Plus Jakarta Sans, bold 700, `text-[11px]`/`0.6875rem`, tracking `0.2em–0.5em`, uppercase): CTAs, nav links, Featured tags, footer copyright. The minimum legible size for functional text is `text-[11px]`.
+- **Display:** hero statement; scales from the frontmatter desktop role to 84px at 1000px, 64px at 600px, and 54px at 360px. The second line carries lavender emphasis.
+- **Headline:** approach statement; contact uses the same weight and tracking with its own 56px desktop / 36px phone size. The catalogue heading is a 72px, 700-weight sibling.
+- **App statement:** the job the app performs; compact panels use 34px. Featured panels reduce with available width, reaching 37px on phones and 32px on the narrowest breakpoint.
+- **Title:** app identity; compact panels use 22px and featured panels use 27px on phones.
+- **Body:** app descriptions; supporting copy spans 17-19px, with hero introduction at 22px desktop / 19px phone. Measures are constrained per context rather than by a universal character limit.
+- **Action:** pill labels; navigation and detail links use sentence-case 14-16px text.
 
 ### Named Rules
-**The Italic Reserve Rule.** Italic Playfair appears only on display, thesis, and title moments — hero emphasis, section headlines, the manifesto line, contact headline, and app card names. Card descriptions, body paragraphs, and supporting copy use regular Plus Jakarta Sans. If italic appears in body copy, the peak moments lose their force.
-
-**The Tracking Split Rule.** Display tracks tight (`-0.025em` to `-0.05em`); labels track wide (`0.2em` to `0.5em`) and uppercase. The two never cross.
+**The Single Voice Rule.** Use Bricolage Grotesque for homepage statements, descriptions, navigation, and actions; hierarchy comes from size and weight rather than a serif or icon-font display treatment.
 
 ## Layout
 
-A single-column scroll narrative on a max-width `80rem` (`max-w-7xl`) container, with section vertical padding at `6rem` (mobile) to `10rem` (desktop). The page alternates between flat `bg-depth-black` sections and `mesh-gradient` atmosphere sections to create rhythm: hero (mesh) → work (flat) → philosophy (mesh) → contact (mesh) → footer (flat).
+The centered container caps at 1440px. Its gutters step from 64px to 40px at 1300px, 32px at 1000px, 24px at 600px, and 20px at 360px. Catalogue panels share a 32px desktop gap. Large section spacing gives the catalogue, approach, and contact clear boundaries without decorative dividers everywhere.
 
-The work section uses an **editorial spotlight** pattern: a full-width featured `<article>` (currently Logline) above a 3-column secondary grid (5 cards) on desktop, collapsing to 2 columns at the `sm` breakpoint and 1 column on mobile. The spotlight carries the larger type scale, a Featured tag, and the full app description; secondary cards are compact with a shorter description and tighter padding.
+Featured app panels are two-column copy-and-screenshot spreads with an alternating reversed variant. At 760px they become one column, copy first. Compact app panels form three columns and become one column at the same breakpoint. The principles follow that responsive change: desktop columns have vertical dividers and 40px internal padding, while phone rows remove the vertical borders and padding. The desktop footer gives the identity the remaining width and both link columns their content width; footer identity spans both columns on smaller screens.
 
-Two faint vertical hairlines (`w-px`, `bg-white/[0.02]`) anchor the work section at the quarter marks — a structural device, not decoration. Stable anchors `#work`, `#about`, `#contact` carry inbound links and must not change.
-
-Breakpoints follow Tailwind defaults: `sm` 40rem, `md` 48rem, `lg` 64rem. Body measure stays 65–75ch via `max-w-2xl` on paragraph blocks.
+At 600px the header retains Contact and hides the two desktop navigation links; catalogue access remains available through the hero and bridge. The hero uses distinct landscape and portrait crops, with phone copy occupying the portrait image's clear upper space. Preserve `#work`, `#about`, and `#contact`, clean app-directory URLs, semantic landmarks, and the skip link.
 
 ## Elevation & Depth
 
-Depth is structural, carried by slab shadows. The system does not use tonal layering as its primary depth device — the slab shadow is what tells the eye "this is a card, this is interactive."
-
-### Shadow Vocabulary
-- **Slab Rest** (`box-shadow: 20px 20px 60px #010102, -5px -5px 20px rgba(255,255,255,0.02)`): the default state of every `.slab-card`. Large offset (20px), long blur (60px), faint top-left highlight. Reads as a raised slab on the dark ground.
-- **Slab Hover** (`box-shadow: 12px 20px 40px #010102, -2px -2px 10px rgba(255,255,255,0.05)` + `transform: translateY(-4px)`): the card lifts and the shadow tightens. The 500ms `cubic-bezier(0.23, 1, 0.32, 1)` transition is the only authored motion on a card.
-- **Glyph Glow** (`filter: drop-shadow(0 0 15px currentColor)` at `opacity: 0.8`, intensifying to `25px` / `opacity: 1` / `scale(1.1) rotate(5deg)` on card hover): the accent-colored halo on Material Symbols glyphs. Secondary atmosphere, not structural.
+Panels are flat at rest and on hover: the homepage has no authored card shadows or lift transforms. Depth comes from low-opacity radial app tints, subtle borders, image composition, and the warmer photographic hero. Contact uses a lavender-dark radial wash. Button backgrounds and link underlines change on hover; focus uses a lavender outline (2px, 5px offset). Color transitions take 200-220ms. Reduced motion disables smooth scrolling and reduces transitions and animations to 0.01ms.
 
 ### Named Rules
-**The Slab-Only Depth Rule.** Cards are the only elements that cast shadows. Glyph glow is a filter effect on a single element, not a box-shadow, and it is the only non-slab depth device. Do not add drop shadows, inner shadows, or colored halos to buttons, inputs, or text — the slab vocabulary is closed.
-
-**The Reduced-Motion Rule.** All transitions and the glyph-glow filter are neutralized under `prefers-reduced-motion: reduce` (transition-duration `0.01ms`, hover transforms removed, glow filter pinned to the rest state). Motion is a privilege, not a default.
+**The Tonal Depth Rule.** Use restrained tonal surfaces and real product imagery to separate content; do not reintroduce the retired slab-shadow or glyph-glow vocabulary on the homepage.
 
 ## Shapes
 
-The form language is almost entirely sharp. Cards and containers use `rounded-sm` (0.25rem) at most — a barely-there softening that reads as intentional rather than round. The focus-visible ring (`box-shadow: 0 0 0 2px rgba(255,255,255,0.3), 0 0 0 4px #030303`) is a double-ring halo, not a border-radius-dependent shape.
-
-Borders are 1px and low-opacity (`border-white/5` at rest, `border-white/20` on hover, `border-white/20` on section dividers). There are no pill shapes, no large radii, no rounded buttons. The Material Symbols glyphs are the only rounded silhouettes on the page, and they sit inside sharp containers by contrast.
-
-**The Sharp-Edge Rule.** Container radii stay at `rounded-sm` (0.25rem) or none. Pills and large radii (`rounded-lg` and up) are reserved for controls that do not exist in this system yet; do not introduce them on cards, buttons, or inputs without an explicit world decision.
+Large app and contact containers share the panel radius; the phone variant softens to the smaller panel radius. Primary actions and header Contact use pills. App Store badges are rounded rectangles, and the app icons retain rounded-square silhouettes. Panel outlines and section dividers are quiet single-pixel strokes. Screenshots are clipped with rounded corners; compact panels crop their image at the lower edge.
 
 ## Components
 
-### Slab Card
-The signature component. A raised slab on the dark ground, carrying one app's identity.
-- **Shape:** `rounded-sm` (0.25rem), 1px border (`white/5` rest, `white/20` hover).
-- **Background:** linear-gradient `145deg, #0e0e12, #050507` (neutral) or a per-app tinted variant on the featured card only (inline `style`, e.g. Logline's `linear-gradient(145deg,#1f1012,#0a0608)` with `rgba(239,68,68,0.22)` border).
-- **Shadow:** Slab Rest → Slab Hover on `:hover`, 500ms ease.
-- **Featured variant:** `.slab-card-featured` is accent-agnostic in CSS (neutral deep gradient, `white/10` border); the accent tint is applied via inline `style` on whichever card is featured, so swapping the featured app touches one inline style, not the stylesheet.
+### Buttons
+Friendly, clear light pills.
+- **Primary:** bright fill, charcoal text, action typography, frontmatter padding, and a 56px minimum height.
+- **Hover / Focus:** lavender fill on hover; shared lavender focus outline. No hover translation.
+- **Copy address:** outlined secondary pill with bright ink, a quiet line border, and inline copy SVG. Hover adds a faint white fill; the disabled waiting state reduces opacity. Result text occupies a reserved live-status line.
 
-### Primary CTA (text link)
-- **Shape:** no container; bare uppercase text link with wide tracking.
-- **Style:** `text-[11px]`, `uppercase`, `tracking-[0.2em–0.3em]`, `font-bold`, the app's accent hue (e.g. `text-red-500`), lightening one step on hover (`text-red-400`). 11px is the minimum.
-- **Secondary CTA:** `text-[11px]`, regular weight, `text-slate-400`, `tracking-wide`, hover to `text-slate-200`. Always sits below the primary.
+### App Store Badge
+A consistent download anchor on every app surface.
+- White fill, charcoal text, rounded rectangle, inline Apple SVG, and a two-line store label.
+- Hover changes the fill to a pale neutral; keyboard focus uses the shared outline.
+- Compact cards use a smaller badge variant. The small auxiliary caption is a badge detail, not a general UI type size.
 
-### Email Link (contact)
-- **Style:** oversized `mailto` (`text-2xl`–`text-5xl`, `font-bold`, white), with a 700ms underline-grow (`w-0` → `group-hover:w-full`) and a hover text-shadow glow (`0 0 30px rgba(255,255,255,0.5)`). The contact surface is a moment, not a form.
+### Cards / Containers
+Roomy app-owned surfaces, with the product doing the talking.
+- Shared outlined rounded form; app-specific dark tint and radial accent wash.
+- Featured variant: identity, large job statement, description, feature list, actions, and paired screenshots.
+- Compact variant: identity, statement, description, actions, and a single lower screenshot crop.
+- Cards themselves are not clickable; store and detail anchors carry the actions. No card hover elevation.
 
 ### Navigation
-- **Desktop:** fixed top, `text-[11px]` uppercase labels, `tracking-[0.3em]`, `text-slate-400` → `text-white` on hover, with a `nav-link` padding wrapper.
-- **Mobile:** full-screen overlay (`mesh-gradient` background), `text-2xl` italic Playfair links, focus-trapped, Escape/outside-tap to close, focus returned to toggle on close.
+Sentence-case text beside a compact developer wordmark. Desktop Contact is an outlined dark pill; on phones it becomes a plain link. Text brightens on hover and receives the shared focus outline. Footer links use underlines on hover. There is no current homepage menu overlay.
 
-### Material Symbols Glyph
-- **Role:** the per-app identity mark inside each slab card.
-- **Style:** `text-6xl`/`text-8xl` (featured) or `text-5xl`/`text-6xl` (secondary), the app's accent hue at `/80` opacity, with `glyph-glow` filter. The icon name must be added to the Material Symbols stylesheet URL's `icon=` parameter or it will not render.
+### Contact Panel
+A centered tonal panel with a full-width headline, supporting paragraph, and two adjacent actions: light email pill with mail SVG and outlined Copy address pill with copy SVG. Icons are 20px with 10px action gaps. The headline fits one line at the 1440px desktop composition; the action row wraps when needed on smaller screens. The email anchor remains usable if clipboard access fails, and the result is announced below the row.
+
+### Approach Principles
+Three equal desktop columns beneath a quiet top divider, with vertical dividers separating the columns. Each begins with a bright line SVG (28px target, scissors, or door), followed by a 700-weight title and muted body. Icon-to-title and title-to-body gaps are 14px. The phone layout stacks the principles and removes vertical dividers.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** use Playfair Display italic only for display, thesis, and title moments; body copy is Plus Jakarta Sans regular.
-- **Do** apply exactly one accent hue per app surface — glyph, primary CTA, and glow — and keep it off everything else.
-- **Do** keep body and secondary text at Ink Primary (slate-400) or lighter; it is the AA-passing shade against `#030303`.
-- **Do** carry the featured card's accent tint via inline `style`, not via a stylesheet class, so swapping the featured app is a one-line change.
-- **Do** neutralize all motion and the glyph-glow filter under `prefers-reduced-motion: reduce`.
+- **Do** use the homepage's charcoal, Bricolage, lavender, and rounded-panel vocabulary together.
+- **Do** keep each app's tonal atmosphere and metadata tied to its own identity.
+- **Do** use actual app imagery and functional download/detail links as the catalogue's evidence.
+- **Do** retain visible keyboard focus, the skip link, reduced-motion behavior, stable anchors, and clean app routes.
+- **Do** preserve readable supporting ink against each contextual surface.
 
 ### Don't:
-- **Don't** introduce a light mode. The near-black ground is a brand commitment, not a theme toggle.
-- **Don't** use italic on card descriptions or body paragraphs. Italic is a peak-only device; overuse flattens the peaks.
-- **Don't** use Ink Secondary (slate-500/600) for body copy — it fails WCAG AA (4.2–4.3:1) against the ground. Reserve it for the footer copyright only.
-- **Don't** add drop shadows, colored halos, or pill shapes to buttons, inputs, or text. The slab-card vocabulary is the only shadow system; sharp edges are the only form language.
-- **Don't** use functional text below `text-[11px]`. 9–10px labels fail legibility and touch-target thresholds.
-- **Don't** reformat the stable anchors (`#work`, `#about`, `#contact`); they carry inbound links.
+- **Don't** impose this homepage system on unchanged app subpages.
+- **Don't** restore the superseded serif, slab-shadow, glyph-glow, or widely tracked uppercase homepage system.
+- **Don't** add app screenshots or icons to the desk hero; its image and clear text area carry the opening.
+- **Don't** present the generated desk illustration as the owner's real photographed workspace.
+- **Don't** invent testimonials, download metrics, client logos, or other evidence the portfolio does not have.

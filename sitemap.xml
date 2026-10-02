@@ -3,47 +3,132 @@
   <!-- Main Portfolio -->
   <url>
     <loc>https://redjonprengzi.github.io/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <!-- Ravn -->
+  <url>
+    <loc>https://redjonprengzi.github.io/ravn/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/ravn/privacy.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/ravn/terms.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <!-- Logline -->
   <url>
     <loc>https://redjonprengzi.github.io/logline/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/logline/privacy.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/logline/terms.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <!-- QuitPilot -->
   <url>
     <loc>https://redjonprengzi.github.io/quitpilot/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- The Daily Bar -->
+  <url>
+    <loc>https://redjonprengzi.github.io/quitpilot/support.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/quitpilot/privacy.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/quitpilot/terms.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Daily Bars -->
   <url>
     <loc>https://redjonprengzi.github.io/dailyBars/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/dailyBars/privacy-policy.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/dailyBars/terms.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <!-- Fastual -->
   <url>
     <loc>https://redjonprengzi.github.io/fastual/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/fastual/privacy.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/fastual/terms.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <!-- Verbalyze -->
   <url>
     <loc>https://redjonprengzi.github.io/verbalyze/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://redjonprengzi.github.io/verbalyze/privacy.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/verbalyze/terms.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://redjonprengzi.github.io/verbalyze/delete-account.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

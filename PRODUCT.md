@@ -38,9 +38,9 @@ A one-developer app studio whose entire catalog is defined by restraint: every a
   - Ravn — productivity, **purple**
   - Logline — entertainment, **red** (Featured)
   - QuitPilot — health, **emerald**
-  - Verbalyze AI — health, **cyan**
+  - Verbalyze — health, **cyan**
   - Fastual — health, **cyan**
-  - The Daily Bar — entertainment, **amber**
+  - Daily Bars — entertainment, **amber**
 - **Routing convention:** clean directory URLs (`href="ravn"`, not `ravn.html`).
 - **SEO / structured-data investment (preserve verbatim on edits):** JSON-LD Person, WebSite, and SoftwareApplication ×6; Open Graph and Twitter cards; canonical URLs; `sitemap.xml`, `robots.txt`, `app-ads.txt`; Google Search Console verification file.
 - **Analytics:** Google Analytics 4, property `G-N24K5M22QV`.

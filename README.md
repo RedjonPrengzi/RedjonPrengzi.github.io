@@ -9,7 +9,7 @@ I build mobile apps that do one thing well. I start with my own frustrations and
 - [QuitPilot](https://redjonprengzi.github.io/quitpilot/) - track smoking habits or monitor recovery milestones. A dual-mode tool for either stage
 - [Verbalyze](https://redjonprengzi.github.io/verbalyze/) - AI companions for mental wellness. Evidence-based, private, available 24/7
 - [Fastual](https://redjonprengzi.github.io/fastual/) - minimalist fasting timer. Know exactly when your body switches to burning fat
-- [The Daily Bar](https://redjonprengzi.github.io/dailyBars/) - one hand-picked rap verse every day with full technical breakdown of rhyme schemes
+- [Daily Bars](https://redjonprengzi.github.io/dailyBars/) - one hand-picked rap verse every day with full technical breakdown of rhyme schemes
 
 ## Contact
 
