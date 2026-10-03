@@ -147,7 +147,7 @@ At 600px the header retains Contact and hides the two desktop navigation links; 
 
 ## Elevation & Depth
 
-Panels are flat at rest and on hover: the homepage has no authored card shadows or lift transforms. Depth comes from low-opacity radial app tints, subtle borders, image composition, and the warmer photographic hero. Contact uses a lavender-dark radial wash. Button backgrounds and link underlines change on hover; focus uses a lavender outline (2px, 5px offset). Color transitions take 200-220ms. Reduced motion disables smooth scrolling and reduces transitions and animations to 0.01ms.
+Panels are flat at rest and on hover: the homepage has no authored card shadows or lift transforms. Depth comes from low-opacity radial app tints, subtle borders, image composition, and the warmer photographic hero. Contact uses a lavender-dark radial wash. Button backgrounds change on hover, and text links draw a 1px underline in from the left; focus uses a lavender outline (2px, 5px offset). Pressable pills and badges settle slightly on press (1px down, 98% scale, 120ms). The hero is the only entrance animation: both headline lines, the introduction, and the primary action fade in while rising 16px, 800ms on an expo ease-out, staggered over 280ms. Color transitions take 200-220ms. Reduced motion disables the hero entrance and smooth scrolling and reduces transitions and animations to 0.01ms.
 
 ### Named Rules
 **The Tonal Depth Rule.** Use restrained tonal surfaces and real product imagery to separate content; do not reintroduce the retired slab-shadow or glyph-glow vocabulary on the homepage.
@@ -178,7 +178,7 @@ Roomy app-owned surfaces, with the product doing the talking.
 - Cards themselves are not clickable; store and detail anchors carry the actions. No card hover elevation.
 
 ### Navigation
-Sentence-case text beside a compact developer wordmark. Desktop Contact is an outlined dark pill; on phones it becomes a plain link. Text brightens on hover and receives the shared focus outline. Footer links use underlines on hover. There is no current homepage menu overlay.
+Sentence-case text beside a compact developer wordmark. Desktop Contact is an outlined dark pill; on phones it becomes a plain link. Text brightens on hover and receives the shared focus outline. Navigation, detail, and footer text links draw their underline in on hover and focus. There is no current homepage menu overlay.
 
 ### Contact Panel
 A centered tonal panel with a full-width headline, supporting paragraph, and two adjacent actions: light email pill with mail SVG and outlined Copy address pill with copy SVG. Icons are 20px with 10px action gaps. The headline fits one line at the 1440px desktop composition; the action row wraps when needed on smaller screens. The email anchor remains usable if clipboard access fails, and the result is announced below the row.
