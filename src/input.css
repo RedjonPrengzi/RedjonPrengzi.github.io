@@ -62,7 +62,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .app-spreads { display: grid; gap: 32px; }
 .app-spread { --app-accent: #f0515a; --app-muted: #c7bfc1; display: grid; grid-template-columns: minmax(0, 1fr) 548px; align-items: center; gap: 72px; min-height: 720px; border: 1px solid var(--line); border-radius: 36px; padding: 64px 80px; background: radial-gradient(ellipse at 85% 50%, #f0515a26, transparent 70%), #140c0e; }
 .app-ravn { --app-accent: #ad90ff; --app-muted: #c6bfce; background: radial-gradient(ellipse at 12% 50%, #9b7bff26, transparent 65%), #100d18; }
-.app-quitpilot { --app-accent: #3cc6a6; --app-muted: #bacbc6; background: radial-gradient(ellipse at 85% 50%, #3cc6a626, transparent 70%), #0b1513; }
+.app-daily-bars { --app-accent: #ffb31f; --app-muted: #cfc6b6; background: radial-gradient(ellipse at 85% 50%, #ffb31f26, transparent 70%), #171108; }
 .app-spread-reversed { grid-template-columns: 548px minmax(0, 1fr); }
 .app-spread-reversed .app-copy { order: 2; }
 .app-spread-reversed .app-visual { order: 1; }
@@ -89,7 +89,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .app-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 32px; }
 .app-small { --app-accent: #35cfff; --app-muted: #bbc6cd; background: radial-gradient(ellipse at 50% 90%, #35cfff18, transparent 55%), #0b1318; display: flex; flex-direction: column; align-items: stretch; min-height: 820px; overflow: hidden; border: 1px solid var(--line); border-radius: 36px; padding-top: 44px; }
 .app-fastual { --app-accent: #34dc81; --app-muted: #bdc9c0; background: radial-gradient(ellipse at 50% 90%, #34dc811c, transparent 55%), #09160d; }
-.app-daily-bars { --app-accent: #ffb31f; --app-muted: #cfc6b6; background: radial-gradient(ellipse at 50% 90%, #ffb31f1a, transparent 55%), #171108; }
+.app-quitpilot { --app-accent: #3cc6a6; --app-muted: #bacbc6; background: radial-gradient(ellipse at 50% 90%, #3cc6a61c, transparent 55%), #0b1513; }
 .small-copy { padding-inline: 40px; }
 .app-small .app-icon { width: 56px; height: 56px; border-radius: 14px; }
 .app-small .app-identity { gap: 14px; }
