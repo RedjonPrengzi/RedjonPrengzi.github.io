@@ -43,9 +43,8 @@ A one-developer app studio whose entire catalog is defined by restraint: every a
   - Daily Bars — entertainment, **amber**
 - **Routing convention:** clean directory URLs (`href="ravn"`, not `ravn.html`).
 - **SEO / structured-data investment (preserve verbatim on edits):** JSON-LD Person, WebSite, and SoftwareApplication ×6; Open Graph and Twitter cards; canonical URLs; `sitemap.xml`, `robots.txt`, `app-ads.txt`; Google Search Console verification file.
-- **Analytics:** Google Analytics 4, property `G-N24K5M22QV`.
+- **Analytics:** none on-site (GA4 removed November 2026); acquisition is measured via Search Console and App Store Connect.
 - **Stable anchors:** `#work`, `#about`, `#contact` may carry inbound links — keep them.
-- **Icon-font gotcha:** the Material Symbols stylesheet URL must list every icon name used in its `icon=` parameter; adding an icon means updating that URL.
 - **Theme:** dark-only editorial palette; no light mode.
 - **Mobile menu:** vanilla-JS toggle in `script.js`; `prefers-reduced-motion` respected via CSS.
 
