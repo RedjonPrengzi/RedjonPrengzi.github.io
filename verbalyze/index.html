@@ -43,98 +43,84 @@
     }
     </script>
 
-    <!-- Google Fonts: Inter -->
     <link rel="stylesheet" href="../assets/fonts.css">
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/app.css?v=2">
 </head>
 
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="app" style="--bg:#012B40;--surface:#0f172a;--text:#f1f5f9;--muted:#a8bfd2;--accent:#06b6d4;--on-accent:#04202c;--display:'Inter',sans-serif;--body:'Inter',sans-serif;--frame:#0a1622;">
+    <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">VERBALYZE AI</div>
+            <a class="logo" href="#">VERBALYZE AI</a>
             <ul class="nav-links">
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#support">Support</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="delete-account.html" class="btn-outline">Delete Account</a></li>
-                <li><a href="../index.html#contact">Get in touch</a></li>
+                <li class="nav-legal"><a href="privacy.html">Privacy</a></li>
+                <li class="nav-legal"><a href="terms.html">Terms</a></li>
+                <li class="nav-legal"><a href="delete-account.html" class="btn-outline">Delete Account</a></li>
+                <li><a href="../index.html#contact" class="btn-outline">Get in touch</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
+    <main id="main">
     <header class="hero">
-        <div class="container hero-grid" id="main-content" tabindex="-1">
+        <div class="container hero-grid">
             <div class="hero-content">
-                <span class="tagline">Mental Wellness, On Your Terms</span>
-                <h1>Your AI companion for <span class="highlight-text">emotional well-being</span></h1>
-                <p>AI companions for mental wellness. Private by architecture, available 24/7, there whenever you need
-                    to talk something through.</p>
+                <h1>Always in your <span class="accent">corner</span>.</h1>
+                <p class="hero-sub">For the moments you need to talk something through and there's no one awake to call. AI companions for mental wellness, private by architecture and always awake.</p>
                 <div class="cta-group">
                     <a href="https://apps.apple.com/us/app/verbalyze-ai/id6745432160" class="btn"
-                        target="_blank">Download for iOS</a>
-                    <a href="javascript:void(0)" class="btn btn-outline" onclick="showAndroidModal()"
-                        onkeydown="handleAndroidModalKeyboard(event)">Download for
-                        Android</a>
+                        target="_blank" rel="noopener">Download for iOS</a>
+                    <button type="button" class="btn btn-outline" data-android-modal>Download for
+                        Android</button>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="glow-effect"></div>
-                <div class="phone-frame floating">
-                    <div class="phone-notch"></div>
-                    <img src="screenshot.png" alt="Verbalyze App Interface" width="300" height="600"
-                        class="phone-mockup"
-                        onerror="this.classList.add('hidden'); this.nextElementSibling.classList.add('visible');">
-                    <div class="screenshot-placeholder">
-                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" aria-hidden="true">
-                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                            <path d="M9 12l2 2 4-4" />
-                        </svg>
-                        <span class="placeholder-text">Screenshot Coming Soon</span>
-                    </div>
+            <div class="hero-visual">
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <img src="screenshot.png" alt="Verbalyze App Interface" class="app-screenshot">
                 </div>
             </div>
         </div>
     </header>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
+    <section id="how-it-works" class="section">
         <div class="container">
-            <h2 class="section-title">How The App Works</h2>
-            <p class="section-subtitle">Set up takes a few minutes. Pick a companion and start talking.</p>
+            <h2 class="section-title fade-in-up">How The App Works</h2>
+            <p class="section-sub fade-in-up delay-100">Setup takes a few minutes. Pick a companion and start talking.</p>
 
-            <div class="steps-container">
-                <div class="step-item">
-                    <div class="step-number">1</div>
+            <div class="feature-grid">
+                <div class="feature-card fade-in-up">
+                    <span class="step-num fade-in-up">1</span>
                     <h3>Create Account</h3>
                     <p>Sign up takes less than a minute. No credit card required. Just a few details to personalize your experience.</p>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
+                <div class="feature-card fade-in-up delay-100">
+                    <span class="step-num fade-in-up">2</span>
                     <h3>Meet Companions</h3>
                     <p>Browse diverse AI companions with unique personalities. Find the one that matches your
                         communication style.</p>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
+                <div class="feature-card fade-in-up delay-200">
+                    <span class="step-num fade-in-up">3</span>
                     <h3>Start Talking</h3>
                     <p>Begin your first conversation with one tap. Your companion is available 24/7 to listen and
                         support you.</p>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
+                <div class="feature-card fade-in-up">
+                    <span class="step-num fade-in-up">4</span>
                     <h3>Grow Daily</h3>
                     <p>Build reflection habits and track your wellness journey with structured listening and reflection techniques.</p>
                 </div>
             </div>
 
-            <div class="science-banner">
+            <div class="banner fade-in-up">
                 <h3>Built with Care</h3>
                 <p>Mental health support should be safe, accessible, and stigma-free. Our AI companions use
                     privacy-first architecture and established listening techniques, so you can speak freely.</p>
@@ -143,17 +129,16 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">Why Choose Verbalyze</h2>
-            <p class="section-subtitle">Features that support your mental wellness, without the noise.</p>
+            <h2 class="section-title fade-in-up">Why Choose Verbalyze</h2>
+            <p class="section-sub fade-in-up delay-100">Features that support your mental wellness, without the noise.</p>
 
             <div class="feature-grid">
 
                 <!-- Feature 1: Diverse Companions -->
-                <div class="feature-card">
-                    <div class="card-glow"></div>
-                    <div class="feature-icon">
+                <div class="feature-card fade-in-up">
+                    <div class="icon-box fade-in-up">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10" />
@@ -162,14 +147,13 @@
                         </svg>
                     </div>
                     <h3>Diverse AI Companions</h3>
-                    <p>Choose from companions with unique personalities and communication styles. Whether you need calm
-                        reflection or energetic motivation, there's one here for you.</p>
+                    <p>Choose from companions with different personalities and tones. Whether you need calm reflection
+                        or a push, there's one here for you.</p>
                 </div>
 
                 <!-- Feature 2: 24/7 Availability -->
-                <div class="feature-card">
-                    <div class="card-glow"></div>
-                    <div class="feature-icon">
+                <div class="feature-card fade-in-up delay-100">
+                    <div class="icon-box fade-in-up">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10" />
@@ -182,9 +166,8 @@
                 </div>
 
                 <!-- Feature 3: Evidence-Based -->
-                <div class="feature-card">
-                    <div class="card-glow"></div>
-                    <div class="feature-icon">
+                <div class="feature-card fade-in-up delay-200">
+                    <div class="icon-box fade-in-up">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" aria-hidden="true">
                             <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
@@ -194,15 +177,14 @@
                             <line x1="10" y1="9" x2="8" y2="9" />
                         </svg>
                     </div>
-                    <h3>Built on Real Listening Techniques</h3>
-                    <p>Conversational support rooted in reflection and listening. Mindfulness practices and reflective
-                        listening, without the clinical overhead.</p>
+                    <h3>Real Listening Techniques</h3>
+                    <p>Conversational support built on reflective listening and mindfulness practices, without the
+                        clinical overhead.</p>
                 </div>
 
                 <!-- Feature 4: Privacy First -->
-                <div class="feature-card">
-                    <div class="card-glow"></div>
-                    <div class="feature-icon">
+                <div class="feature-card fade-in-up">
+                    <div class="icon-box fade-in-up">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" aria-hidden="true">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -210,13 +192,12 @@
                         </svg>
                     </div>
                     <h3>Private by Design</h3>
-                    <p>Your conversations are encrypted and never shared. Stigma-free support starts with privacy.</p>
+                    <p>Your conversations are encrypted and never shared.</p>
                 </div>
 
                 <!-- Feature 5: Personalized Guidance -->
-                <div class="feature-card">
-                    <div class="card-glow"></div>
-                    <div class="feature-icon">
+                <div class="feature-card fade-in-up delay-100">
+                    <div class="icon-box fade-in-up">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" aria-hidden="true">
                             <polygon
@@ -225,13 +206,12 @@
                     </div>
                     <h3>Find Your Match</h3>
                     <p>Take time exploring each companion's profile and specialties. Our built-in guidance helps you
-                        choose one that aligns with your goals, stress relief, reflection, or emotional processing.</p>
+                        choose the one that fits what you need: stress relief, reflection, or working through something.</p>
                 </div>
 
                 <!-- Feature 6: Safe Space -->
-                <div class="feature-card">
-                    <div class="card-glow"></div>
-                    <div class="feature-icon">
+                <div class="feature-card fade-in-up delay-200">
+                    <div class="icon-box fade-in-up">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
                             stroke-linejoin="round" aria-hidden="true">
                             <path
@@ -247,39 +227,49 @@
         </div>
     </section>
 
-    <!-- Support Section -->
-    <section id="support" class="support">
+        <!-- Maker's Note -->
+    <section class="section story-section">
         <div class="container">
-            <div class="support-card">
-                <h2>Support</h2>
-                <p>Have questions, feedback, or need assistance? We're here to help.</p>
-                <a href="mailto:prengzi.redjon@gmail.com" class="btn">Contact Support</a>
-                <span class="email-text">prengzi.redjon@gmail.com</span>
-
-                <div class="support-links">
-                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="terms.html" class="footer-link">Terms of Service</a>
-                    <span class="separator">|</span>
-                    <a href="delete-account.html" class="footer-link">Delete Account</a>
-                </div>
+            <div class="story-note fade-in-up">
+                <h2 class="story-heading">A note from the <span class="accent">maker</span></h2>
+                <p class="story">I didn't build Verbalyze to replace a therapist, and it shouldn't be used as one. It's for the moments you need to talk something through and there's no one awake to call. It's for people who are embarrassed to open up, who don't have a safe space for their thoughts, who live where mental health still carries a stigma. It's for anyone who wants to be heard without having to speak. Growing up, I saw firsthand, in myself, in friends and in family, how much mental health matters. And I saw that sometimes all a person needs is a safe outlet. Verbalyze doesn't promise much, and I don't want to promise anything either. I just hope it's better than nothing. I hope you win the battles no one knows about. I hope you know there's always a way. Stay well.</p>
+                <p class="story-by">By Redjon, maker of Verbalyze</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-container">
-            <span class="footer-logo">VERBALYZE AI</span>
+<!-- Support Section -->
+    <section id="support" class="section">
+        <div class="container">
+            <div class="support-card fade-in-up">
+                <h2>Support</h2>
+                <p>Have questions, feedback, or need assistance? We're here to help.</p>
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn">Contact Support</a>
+                <p class="email-text">prengzi.redjon@gmail.com</p>
 
-            <nav class="footer-nav">
+                <div class="support-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="terms.html">Terms of Service</a>
+                    <span class="separator">|</span>
+                    <a href="delete-account.html">Delete Account</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-brand fade-in-up">VERBALYZE AI</p>
+            <div class="footer-links fade-in-up">
                 <a href="../index.html">Redjon Prengzi</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
                 <a href="mailto:prengzi.redjon@gmail.com">Support</a>
-            </nav>
-
-            <p class="copyright">&copy; 2026 Redjon Prengzi.</p>
+            </div>
+            <p class="footer-copyright">&copy; 2026 Redjon Prengzi.</p>
             <p class="disclaimer">Verbalyze is not a substitute for professional mental health care. If you are in
                 crisis, please contact emergency services.</p>
         </div>
@@ -300,19 +290,12 @@
 
             <div class="modal-actions">
                 <a href="mailto:prengzi.redjon@gmail.com?subject=Verbalyze%20Android%20Access" class="btn btn-full-width">Contact Directly</a>
-                <button onclick="closeAndroidModal()" onkeydown="handleModalCloseKeyDown(event)" class="btn-close"
-                    aria-label="Close modal">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
+                <button type="button" data-modal-close class="modal-close">Close</button>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../assets/app.js?v=2" defer></script>
 
 </body>
 

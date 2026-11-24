@@ -43,24 +43,23 @@
     }
     </script>
 
-    <!-- Google Fonts: Oswald (Headings) and Inter (Body) -->
     <link rel="stylesheet" href="../assets/fonts.css">
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/app.css?v=2">
 </head>
 
-<body>
+<body class="app" style="--bg:#050505;--surface:#0d0d10;--text:#ffffff;--muted:#a1a1a1;--accent:#FFAA00;--on-accent:#1a1000;--display:'Oswald',sans-serif;--body:'Inter',sans-serif;--frame:#141416;">
     <!-- Skip link for keyboard accessibility -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">THE DAILY BAR</div>
+            <a class="logo" href="#">THE DAILY BAR</a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#support">Support</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms</a></li>
+                <li class="nav-legal"><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li class="nav-legal"><a href="terms.html">Terms</a></li>
                 <li><a href="../index.html#contact" class="btn-outline">Get in touch</a></li>
             </ul>
         </div>
@@ -71,82 +70,74 @@
     <header class="hero">
         <div class="container hero-grid">
             <div class="hero-content">
-                <h1>ONE VERSE. <span class="highlight-text">EVERY DAY.</span></h1>
-                <p>A daily selection of impactful lyricism. Color-coded rhyme schemes, internal breakdowns, and
-                    technical analysis
-                    built into a minimalist interface.</p>
+                <h1>ONE VERSE. <span class="accent">EVERY DAY.</span></h1>
+                <p class="hero-sub">One standout verse a day. Color-coded rhyme schemes and technical breakdowns, so you hear what the artist built.</p>
                 <div class="cta-group">
-                    <a href="https://apps.apple.com/us/app/daily-bars/id6757107337" class="btn-store"
-                        target="_blank">Download for iOS</a>
-                    <a href="javascript:void(0)" class="btn-store" onclick="showAndroidModal()">Download for Android</a>
+                    <a href="https://apps.apple.com/us/app/daily-bars/id6757107337" class="btn"
+                        target="_blank" rel="noopener">Download for iOS</a>
+                    <button type="button" class="btn btn-outline" data-android-modal>Download for Android</button>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="glow-effect"></div>
-                <!-- Replace 'app-screenshot.png' with your actual screenshot file -->
-                <img src="app-screenshot.png" alt="Daily Bars App Interface" class="phone-mockup">
+            <div class="hero-visual">
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <img src="app-screenshot.png" alt="Daily Bars App Interface" class="app-screenshot">
+                </div>
             </div>
         </div>
     </header>
     </main>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">THE BREAKDOWN</h2>
+            <h2 class="section-title fade-in-up">THE BREAKDOWN</h2>
             <div class="feature-grid">
 
                 <!-- Feature 1: Pink -->
-                <div class="feature-card pink">
-                    <div class="card-glow"></div>
+                <div class="feature-card fade-in-up" style="--card-accent:#ff4081">
                     <div class="content">
-                        <span class="giant-num">01</span>
+                        <span class="swatch fade-in-up"></span>
                         <h3>Lyrical Structure</h3>
-                        <p>Visual highlights identify internal rhymes, multis, and assonance. See the patterns behind
-                            the flow.</p>
+                        <p>Internal rhymes, multis, and assonance get their own colors, so you can see the technique
+                            inside a verse.</p>
                     </div>
                 </div>
 
                 <!-- Feature 2: Blue -->
-                <div class="feature-card blue">
-                    <div class="card-glow"></div>
+                <div class="feature-card fade-in-up delay-100" style="--card-accent:#00e5ff">
                     <div class="content">
-                        <span class="giant-num">02</span>
+                        <span class="swatch fade-in-up"></span>
                         <h3>Daily Selection</h3>
                         <p>One standout verse every 24 hours, hand-curated and synchronized to your local time.</p>
                     </div>
                 </div>
 
                 <!-- Feature 3: Green -->
-                <div class="feature-card green">
-                    <div class="card-glow"></div>
+                <div class="feature-card fade-in-up delay-200" style="--card-accent:#ccff00">
                     <div class="content">
-                        <span class="giant-num">03</span>
+                        <span class="swatch fade-in-up"></span>
                         <h3>Local Access</h3>
-                        <p>All verses and your favorites are cached locally, allowing you to revisit the analysis
-                            anytime.</p>
+                        <p>All verses and your favorites are cached locally, so the analysis is there whenever you come back.</p>
                     </div>
                 </div>
 
                 <!-- Feature 4: Orange (Drop A Bar) -->
-                <div class="feature-card orange">
-                    <div class="card-glow"></div>
+                <div class="feature-card fade-in-up" style="--card-accent:#FFAA00">
                     <div class="content">
-                        <span class="giant-num">04</span>
+                        <span class="swatch fade-in-up"></span>
                         <h3>Drop A Bar</h3>
-                        <p>Submit your own favorite verses directly in the app. Every submission is reviewed for
-                            inclusion in the daily rotation.</p>
+                        <p>Submit your favorite verses straight from the app. I review every submission before it joins
+                            the daily rotation.</p>
                     </div>
                 </div>
 
                 <!-- Feature 5: Red (The Crate) -->
-                <div class="feature-card red">
-                    <div class="card-glow"></div>
+                <div class="feature-card fade-in-up delay-100" style="--card-accent:#ff3d00">
                     <div class="content">
-                        <span class="giant-num">05</span>
+                        <span class="swatch fade-in-up"></span>
                         <h3>The Crate</h3>
-                        <p>Save verses to your personal library to build a collection of your favorite technical
-                            breakdowns.</p>
+                        <p>Save verses to your library and build your own collection of technical breakdowns.</p>
                     </div>
                 </div>
 
@@ -154,23 +145,34 @@
         </div>
     </section>
 
-    <!-- Support Section -->
-    <section id="support" class="support">
-        <div class="container support-container">
-            <div class="glass-card support-card">
+        <!-- Maker's Note -->
+    <section class="section story-section">
+        <div class="container">
+            <div class="story-note fade-in-up">
+                <h2 class="story-heading">A note from the <span class="accent">maker</span></h2>
+                <p class="story">I spent my teens in a friend's studio, listening to hip-hop heads break down rhyme schemes for hours. Daily Bars puts that studio on your phone. One famous verse a day, every rhyme mapped in color, and a breakdown of why the bar works. Most of the verses came from those same friends.</p>
+                <p class="story-by">By Redjon, maker of Daily Bars</p>
+            </div>
+        </div>
+    </section>
+
+<!-- Support Section -->
+    <section id="support" class="section">
+        <div class="container">
+            <div class="support-card fade-in-up">
                 <h2>SUPPORT</h2>
                 <p>Encountered a bug or have a suggestion? Get in touch.</p>
-                <a href="mailto:prengzi.redjon@gmail.com" class="btn-solid">Contact Support</a>
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn">Contact Support</a>
                 <p class="email-text">prengzi.redjon@gmail.com</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container footer-content-center">
-            <p class="footer-brand">THE DAILY BAR</p>
-            <div class="footer-links-center">
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-brand fade-in-up">THE DAILY BAR</p>
+            <div class="footer-links fade-in-up">
                 <a href="../index.html">Redjon Prengzi</a>
                 <a href="privacy-policy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
@@ -193,34 +195,13 @@
             <p class="modal-text">The Android version is currently in closed testing on the Play Store. Contact me
                 directly for access.</p>
             <div class="modal-actions">
-                <a href="mailto:prengzi.redjon@gmail.com" class="btn-solid btn-full-width">Contact Directly</a>
-                <button onclick="closeAndroidModal()" class="modal-close">Close</button>
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn btn-full-width">Contact Directly</a>
+                <button type="button" data-modal-close class="modal-close">Close</button>
             </div>
         </div>
     </div>
 
-    <script>
-        function showAndroidModal() {
-            const modal = document.getElementById('androidModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeAndroidModal() {
-            const modal = document.getElementById('androidModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        window.onclick = function (event) {
-            const modal = document.getElementById('androidModal');
-            if (event.target === modal) closeAndroidModal();
-        }
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') closeAndroidModal();
-        });
-    </script>
+    <script src="../assets/app.js?v=2" defer></script>
 
 </body>
 

@@ -42,30 +42,30 @@
       }
     }
     </script>
-    <!-- Fonts: Poppins (Headings) & Inter (Body) -->
+
     <link rel="stylesheet" href="../assets/fonts.css">
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/app.css?v=2">
 </head>
 
-<body>
+<body class="app" style="--bg:#FFFFFF;--surface:#F8FAFC;--text:#0F172A;--muted:#475569;--accent:#10b981;--accent-ink:#047857;--on-accent:#052e21;--display:'Poppins',sans-serif;--body:'Inter',sans-serif;--frame:#0F172A;">
     <!-- Skip link for keyboard accessibility -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- NAV -->
     <nav class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">
-                <img src="favicon.png" alt="QuitPilot" width="32" height="32" style="border-radius: 8px;">
-                QuitPilot
+        <div class="container nav-container">
+            <a class="logo" href="#">
+                <img src="favicon.png" alt="QuitPilot" width="32" height="32">
+                <span>QuitPilot</span>
             </a>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#modes">Dual Mode</a>
-                <a href="support.html">Support</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="../index.html#contact">Get in touch</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#modes">Dual Mode</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li class="nav-legal"><a href="privacy.html">Privacy</a></li>
+                <li class="nav-legal"><a href="terms.html">Terms</a></li>
+                <li><a href="../index.html#contact" class="btn-outline">Get in touch</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -73,49 +73,38 @@
     <main id="main">
     <header class="hero">
         <div class="container hero-grid">
-            <div class="hero-text fade-in-up">
-                <h1>Quit Smoking or Track the Damage. You Choose.</h1>
-                <p>A stop-smoking tool with a dual-mode interface. Monitor the impact of current habits or track the
-                    milestones of your recovery. Available in English and Albanian.</p>
+            <div class="hero-content">
+                <h1>Quit. Or track the damage.</h1>
+                <p class="hero-sub">It counts what smoking costs you while you smoke, and what you get back when you quit. Free forever, in English and Albanian.</p>
 
-                <div class="cta-buttons">
-                    <a href="https://apps.apple.com/us/app/quitpilot-quit-smoking-app/id6758869034" class="btn btn-white"
-                        target="_blank">Download for iOS</a>
-                    <a href="javascript:void(0)" class="btn btn-outline"
-                        onclick="showAndroidModal()">Download for Android</a>
-                </div>
-
-                <div class="trust-badges">
-                    <span>Free Forever</span> • <span>Unified Experience</span>
+                <div class="cta-group">
+                    <a href="https://apps.apple.com/us/app/quitpilot-quit-smoking-app/id6758869034" class="btn"
+                        target="_blank" rel="noopener">Download for iOS</a>
+                    <button type="button" class="btn btn-outline" data-android-modal>Download for Android</button>
                 </div>
             </div>
 
-            <div class="hero-visual fade-in-up delay-200">
-                <div class="phone-frame floating">
+            <div class="hero-visual">
+                <div class="phone-frame">
                     <div class="notch"></div>
-                    <!-- REPLACED: CSS UI with actual Image -->
                     <img src="Screenshot_website.png" alt="QuitPilot App Screenshot" class="app-screenshot">
                 </div>
-                <!-- Background Glow -->
-                <div class="glow"></div>
             </div>
         </div>
     </header>
     </main>
 
     <!-- FEATURES GRID -->
-    <section id="features" class="features">
+    <section id="features" class="section">
         <div class="container">
-            <div class="section-header">
-                <h2>Tracking the Journey</h2>
-                <p>Habit data you can act on, and tools to manage cravings the moment they hit.</p>
-            </div>
+            <h2 class="section-title fade-in-up">Tracking the Journey</h2>
+            <p class="section-sub fade-in-up delay-100">Habit data you can act on, and tools to manage cravings the moment they hit.</p>
 
-            <div class="grid-3">
-                <div class="card fade-in-up">
-                    <div class="icon-box green">
+            <div class="feature-grid">
+                <div class="feature-card fade-in-up" style="--card-accent:#10b981">
+                    <div class="icon-box fade-in-up">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M12 2v20M2 12h20"></path>
                         </svg>
                     </div>
@@ -124,10 +113,10 @@
                         normalization to long-term health improvements.</p>
                 </div>
 
-                <div class="card fade-in-up delay-100">
-                    <div class="icon-box blue">
+                <div class="feature-card fade-in-up delay-100" style="--card-accent:#3B82F6">
+                    <div class="icon-box fade-in-up">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <rect x="2" y="5" width="20" height="14" rx="2" />
                             <line x1="2" y1="10" x2="22" y2="10" />
                         </svg>
@@ -137,10 +126,10 @@
                         getaway.</p>
                 </div>
 
-                <div class="card fade-in-up delay-200">
-                    <div class="icon-box teal">
+                <div class="feature-card fade-in-up delay-200" style="--card-accent:#0d9488">
+                    <div class="icon-box fade-in-up">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path
                                 d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z" />
                         </svg>
@@ -154,51 +143,63 @@
     </section>
 
     <!-- DUAL MODE SECTION -->
-    <section id="modes" class="modes">
-        <div class="container mode-layout">
-            <div class="mode-text fade-in-up">
-                <span class="badge">Unique Feature</span>
-                <h2>A Mode for Every Stage</h2>
-                <p>QuitPilot adapts its interface depending on whether you're currently smoking or in recovery.</p>
+    <section id="modes" class="section">
+        <div class="container split-grid">
+            <div>
+                <h2 class="section-title fade-in-up">A Mode for Every Stage</h2>
+                <p class="section-sub fade-in-up delay-100">QuitPilot adapts its interface depending on whether you're currently smoking or in recovery.</p>
 
-                <div class="mode-toggle">
-                    <div class="mode-item active">
-                        <h4>🛑 Smoker Mode</h4>
+                <div class="stack" role="group" aria-label="Tracking mode">
+                    <button type="button" class="mini-card fade-in-up active" style="--card-accent:#ef4444"
+                        data-mode="smoker" aria-pressed="true">
+                        <span class="mini-title"><span class="mode-dot"></span>Smoker Mode</span>
                         <p>Track money burnt, cigarettes smoked, tar accumulated, and time lost. A daily nudge
                             toward Quit Day.</p>
-                    </div>
-                    <div class="mode-item">
-                        <h4>✨ Quitter Mode</h4>
+                    </button>
+                    <button type="button" class="mini-card fade-in-up" style="--card-accent:#10b981"
+                        data-mode="quitter" aria-pressed="false">
+                        <span class="mini-title"><span class="mode-dot"></span>Quitter Mode</span>
                         <p>Track money saved, days smoke-free, and lung recovery progress. Unlock health milestones with
-                            celebrations and smart relapse handling.</p>
-                    </div>
+                            celebrations and support when you slip.</p>
+                    </button>
                 </div>
             </div>
-            <div class="mode-visual fade-in-up delay-200">
-                <!-- Abstract visual of turning bad to good -->
-                <div class="visual-card gradient-border">
-                    <div class="stat-row">
-                        <span>Lungs</span>
-                        <div class="live-bar"></div>
-                    </div>
-                    <div class="stat-row">
-                        <span>Money</span>
-                        <div class="live-bar delayed"></div>
-                    </div>
-                    <div class="stat-row">
-                        <span>Life</span>
-                        <div class="live-bar delayed-2"></div>
-                    </div>
+            <div class="fade-in-up delay-200">
+                <div class="mode-panel" id="mode-panel" style="--card-accent:#ef4444" aria-live="polite">
+                    <p class="panel-kicker"><span id="mode-panel-name">Smoker Mode</span> tracks</p>
+                    <ul class="metric-list" data-panel="smoker">
+                        <li><span class="mode-dot"></span>Money burnt</li>
+                        <li><span class="mode-dot"></span>Cigarettes smoked</li>
+                        <li><span class="mode-dot"></span>Tar accumulated</li>
+                        <li><span class="mode-dot"></span>Time lost</li>
+                    </ul>
+                    <ul class="metric-list" data-panel="quitter" hidden>
+                        <li><span class="mode-dot"></span>Money saved</li>
+                        <li><span class="mode-dot"></span>Days smoke-free</li>
+                        <li><span class="mode-dot"></span>Lung recovery</li>
+                        <li><span class="mode-dot"></span>Health milestones</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Maker's Note -->
+    <section class="section story-section">
+        <div class="container">
+            <div class="story-note fade-in-up">
+                <h2 class="story-heading">A note from the <span class="accent">maker</span></h2>
+                <p class="story">I've spent years trying to convince my friends to quit smoking, and I never managed it. As a non-smoker, I didn't understand how hard it was. When I went looking for apps that could help, I found they all assume you've already quit. I wanted one that helps before you've quit. QuitPilot tracks what smoking costs you and does to your body while you're still doing it, then switches to tracking your recovery when you stop. No lectures, no guilt-tripping, no judgment. When one of my friends actually quit, I made QuitPilot public, hoping it would help more people. I hope it helps you. And if it does, pass it on.</p>
+                <p class="story-by">By Redjon, maker of QuitPilot</p>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer>
-        <div class="container footer-content-center">
-            <p class="footer-brand">QUITPILOT</p>
-            <div class="footer-links-center">
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-brand fade-in-up">QUITPILOT</p>
+            <div class="footer-links fade-in-up">
                 <a href="../index.html">Redjon Prengzi</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
@@ -217,40 +218,17 @@
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
             </div>
-            <h2 id="modal-title" class="modal-title">CLOSED TESTING</h2>
+            <h2 id="modal-title" class="modal-title">Closed Testing</h2>
             <p class="modal-text">The Android version is currently in closed testing on the Play Store. Contact me directly
                 for access.</p>
             <div class="modal-actions">
-                <a href="mailto:prengzi.redjon@gmail.com" class="btn btn-white btn-full-width">Contact Directly</a>
-                <button onclick="closeAndroidModal()" class="modal-close">Close</button>
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn btn-full-width">Contact Directly</a>
+                <button type="button" data-modal-close class="modal-close">Close</button>
             </div>
         </div>
     </div>
 
-    <script>
-        function showAndroidModal() {
-            const modal = document.getElementById('androidModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeAndroidModal() {
-            const modal = document.getElementById('androidModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        window.onclick = function (event) {
-            const modal = document.getElementById('androidModal');
-            if (event.target === modal) closeAndroidModal();
-        }
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') closeAndroidModal();
-        });
-    </script>
-
-    <script src="script.js"></script>
+    <script src="../assets/app.js?v=2" defer></script>
 </body>
 
 </html>

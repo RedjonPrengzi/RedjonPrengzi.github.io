@@ -42,665 +42,106 @@
       }
     }
     </script>
-    <!-- Import Fonts: Playfair (Serif) & Inter (Sans) -->
+
     <link rel="stylesheet" href="../assets/fonts.css">
-<style>
-        /* --- VARIABLES & RESET --- */
-        :root {
-            /* FASTUAL "Midnight Forest" Palette */
-            --bg-color: #050F0A;
-            /* Deep Forest Green */
-            --card-color: #0F1F18;
-            /* Lighter Leaf Green */
-            --text-main: #E0E8E3;
-            /* Mist White */
-            --text-muted: #5C7064;
-            /* Moss Grey */
-            --accent-sage: #2FF57E;
-            /* Neon Bioluminescence */
-            --accent-copper: #C27352;
-            /* Earth/Clay */
-
-            --font-sans: 'Inter', sans-serif;
-            --font-serif: 'Playfair Display', serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Skip link for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-sage);
-            color: var(--bg-color);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            z-index: 9999;
-            transition: top 0.3s;
-        }
-
-        .skip-link:focus {
-            top: 1rem;
-        }
-
-        /* Focus visible styles */
-        *:focus-visible {
-            outline: 2px solid var(--accent-sage);
-            outline-offset: 3px;
-            border-radius: 4px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: 0.3s;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* --- TYPOGRAPHY --- */
-        h1,
-        h2,
-        h3 {
-            font-family: var(--font-serif);
-            /* Bespoke Touch */
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        h1 {
-            font-size: 3.8rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-main);
-        }
-
-        p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        /* --- LAYOUT --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* --- HEADER --- */
-        header {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-main);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--accent-sage);
-        }
-
-        nav a:focus-visible {
-            outline-offset: 4px;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 4rem 0;
-            min-height: 80vh;
-        }
-
-        .hero-text {
-            flex: 1;
-            padding-right: 4rem;
-        }
-
-        .hero-text h1 span {
-            color: var(--accent-sage);
-            font-style: italic;
-            /* Editorial flair */
-        }
-
-        .hero-text p {
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-            line-height: 1.7;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            padding: 1rem 2.2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-right: 1rem;
-            box-shadow: 0 0 20px rgba(47, 245, 126, 0.1);
-        }
-
-        .btn:hover {
-            background-color: var(--accent-sage);
-            color: var(--bg-color);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(47, 245, 126, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--text-muted);
-            color: var(--text-main);
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent-copper);
-            color: var(--accent-copper);
-            background: transparent;
-            transform: translateY(-2px);
-        }
-
-        /* --- PHONE MOCKUP --- */
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-
-        /* The Glow Effect behind phone */
-        .hero-image::after {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 500px;
-            background: var(--accent-sage);
-            filter: blur(100px);
-            opacity: 0.15;
-            z-index: 0;
-        }
-
-        .phone-frame {
-            width: 300px;
-            height: 600px;
-            border: 12px solid #1a1a1a;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 2px #222;
-            background: #050F0A;
-            z-index: 1;
-        }
-
-        .phone-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40%;
-            height: 25px;
-            background: #1a1a1a;
-            border-radius: 0 0 15px 15px;
-            z-index: 2;
-        }
-
-        .app-screenshot {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* --- FEATURES SECTION --- */
-        .features {
-            padding: 8rem 0;
-            background: linear-gradient(to bottom, var(--bg-color), #020503);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--card-color);
-            padding: 2.5rem;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-sage);
-        }
-
-        .feature-card:focus-within {
-            border-color: var(--accent-sage);
-            box-shadow: 0 0 0 3px rgba(47, 245, 126, 0.2);
-        }
-
-        .icon-box {
-            width: 50px;
-            height: 50px;
-            background: rgba(47, 245, 126, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--accent-sage);
-        }
-
-        .feature-card h3 {
-            font-family: var(--font-sans);
-            /* Keep features clean sans-serif */
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        /* --- SUPPORT SECTION --- */
-        .support {
-            background-color: var(--card-color);
-            padding: 6rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .support-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .email-box {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 2.5rem;
-            border-radius: 24px;
-            margin-top: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .email-link {
-            font-size: 1.5rem;
-            font-family: var(--font-serif);
-            color: var(--accent-copper);
-            font-weight: 600;
-        }
-
-        .email-link:hover {
-            opacity: 0.8;
-        }
-
-        .email-link:focus-visible {
-            outline-offset: 4px;
-        }
-
-        .email-label {
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 3rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            border-top: 1px solid #111;
-        }
-
-        .footer-content-center {
-            padding: 2rem 0;
-        }
-
-        .footer-brand {
-            margin-bottom: 1rem;
-            font-family: var(--font-serif);
-            font-weight: 700;
-            color: var(--text-main);
-            font-size: 1.2rem;
-        }
-
-        .footer-links-center {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            opacity: 0.6;
-            font-size: 0.9rem;
-        }
-
-        .footer-links-center a:hover {
-            color: var(--accent-sage);
-        }
-
-        .footer-links-center a:focus-visible {
-            outline-offset: 4px;
-        }
-
-        .footer-copyright {
-            opacity: 0.3;
-            font-size: 0.8rem;
-        }
-
-        /* --- MODAL --- */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            backdrop-filter: blur(8px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: var(--card-color);
-            border: 1px solid var(--accent-sage);
-            padding: 3rem;
-            border-radius: 24px;
-            max-width: 500px;
-            text-align: center;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-icon {
-            color: var(--accent-sage);
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-title {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            font-family: var(--font-serif);
-        }
-
-        .modal-text {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .modal-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .btn-full-width {
-            margin: 0;
-            width: 100%;
-        }
-
-        .modal-close {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 0.9rem;
-            text-decoration: underline;
-            padding: 0.5rem;
-        }
-
-        .modal-close:focus-visible {
-            outline-offset: 2px;
-        }
-
-        /* --- REDUCED MOTION SUPPORT --- */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-
-            .feature-card:hover {
-                transform: none;
-            }
-
-            .btn:hover {
-                transform: none;
-            }
-
-            .btn-outline:hover {
-                transform: none;
-            }
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            header {
-                justify-content: center;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 2rem;
-            }
-
-            .hero-text {
-                padding-right: 0;
-                margin-top: 3rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .phone-frame {
-                width: 260px;
-                height: 520px;
-                max-width: 100%;
-            }
-
-            .store-buttons {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-                width: 100%;
-            }
-
-            .btn {
-                margin-right: 0;
-                width: auto;
-                min-width: 220px;
-                display: inline-block;
-            }
-
-            .btn-outline {
-                width: auto;
-                min-width: 220px;
-                display: inline-block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/app.css?v=2">
 </head>
 
-<body>
+<body class="app" style="--bg:#050F0A;--surface:#0F1F18;--text:#E0E8E3;--muted:#9db4a6;--accent:#2FF57E;--on-accent:#04220f;--display:'Playfair Display',serif;--body:'Inter',sans-serif;--frame:#0A1710;--h1-max:72px;">
     <!-- Skip link for keyboard accessibility -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- NAV -->
-    <header class="container">
-        <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-sage)">
-                <!-- Abstract "F" or Timer Icon -->
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 6v6l4 2"></path>
-            </svg>
-            FASTUAL
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#onboarding">Get Started</a></li>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a class="logo" href="#">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+                <span>FASTUAL</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Get Started</a></li>
                 <li><a href="#support">Support</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="../index.html#contact">Get in touch</a></li>
+                <li class="nav-legal"><a href="privacy.html">Privacy</a></li>
+                <li class="nav-legal"><a href="terms.html">Terms</a></li>
+                <li><a href="../index.html#contact" class="btn-outline">Get in touch</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- HERO -->
     <main id="main">
-    <section class="hero container">
-        <div class="hero-text">
-            <h1>Know exactly when your body <span>switches to burning fat</span>.</h1>
-            <p>Fastual is a focused fasting timer. See your metabolic state clearly and track your progress over time.</p>
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>See what your <span class="accent">fast</span> is doing.</h1>
+                <p class="hero-sub">A fasting timer that shows which phase your body is in, from digestion to ketosis to autophagy, and tracks your progress over time.</p>
 
-            <div class="store-buttons">
-                <a href="https://apps.apple.com/us/app/fastual/id6758233821" class="btn" target="_blank">Download for
-                    iOS</a>
-                <a href="javascript:void(0)" class="btn btn-outline" onclick="showAndroidModal()">Download for
-                    Android</a>
+                <div class="cta-group">
+                    <a href="https://apps.apple.com/us/app/fastual/id6758233821" class="btn" target="_blank" rel="noopener">Download for
+                        iOS</a>
+                    <button type="button" class="btn btn-outline" data-android-modal>Download for
+                        Android</button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <img src="screenshot.png" alt="Fastual App Dashboard" class="app-screenshot">
+                </div>
             </div>
         </div>
-
-        <div class="hero-image">
-            <div class="phone-frame">
-                <!-- PLACEHOLDER FOR SCREENSHOT -->
-                <!-- Add a file named 'screenshot.png' to your folder -->
-                <img src="screenshot.png" alt="Fastual App Dashboard" class="app-screenshot">
-            </div>
-        </div>
-    </section>
+    </header>
     </main>
 
     <!-- ONBOARDING -->
-    <section id="onboarding" class="features">
+    <section id="features" class="section">
         <div class="container">
-            <h2>Get Started in Minutes</h2>
-            <div class="features-grid">
+            <h2 class="section-title fade-in-up">Get Started in Minutes</h2>
+            <div class="feature-grid">
 
                 <!-- Step 1: Download -->
-                <div class="feature-card">
-                    <div class="icon-box">
+                <div class="feature-card fade-in-up">
+                    <div class="icon-box fade-in-up">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
                     </div>
-                    <h3>1. Download Fastual</h3>
+                    <h3>Download Fastual</h3>
                     <p>Free on the App Store for iPhone. Open the app and start tracking. No setup.</p>
                 </div>
 
                 <!-- Step 2: Configure -->
-                <div class="feature-card">
-                    <div class="icon-box">
+                <div class="feature-card fade-in-up delay-100">
+                    <div class="icon-box fade-in-up">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
                     </div>
-                    <h3>2. Set Your Fasting Window</h3>
+                    <h3>Set Your Fasting Window</h3>
                     <p>Choose your eating and fasting hours. Start with 16:8 if you're new, or go straight to 20:4 if
                         you're experienced.</p>
                 </div>
 
                 <!-- Step 3: Track -->
-                <div class="feature-card">
-                    <div class="icon-box">
+                <div class="feature-card fade-in-up delay-200">
+                    <div class="icon-box fade-in-up">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                     </div>
-                    <h3>3. Start Your First Fast</h3>
+                    <h3>Start Your First Fast</h3>
                     <p>Tap start when you finish eating. The timer tracks your progress and notifies you when your
                         window opens. That's it.</p>
                 </div>
@@ -709,23 +150,33 @@
         </div>
     </section>
 
-    <!-- SUPPORT -->
-    <section id="support" class="support">
-        <div class="container support-content">
-            <h2>Support</h2>
-            <p>Questions about the app or found a bug? Get in touch.</p>
-
-            <div class="email-box">
-                <p class="email-label">Contact Us</p>
-                <a href="mailto:prengzi.redjon@gmail.com" class="email-link">prengzi.redjon@gmail.com</a>
+        <!-- Maker's Note -->
+    <section class="section story-section">
+        <div class="container">
+            <div class="story-note fade-in-up">
+                <h2 class="story-heading">A note from the <span class="accent">maker</span></h2>
+                <p class="story">When intermittent fasting was everywhere and everyone was talking about it, I wanted to try it. But I also wanted to learn what it was doing to my body. I figured if I was curious, other people were too, so I built Fastual. It shows which phase your body is in during a fast, from digestion to ketosis to autophagy, and teaches you as you go. I kept it minimal on purpose: no extra features, no fluff. And I made it public because if something is good, it must be shared.</p>
+                <p class="story-by">By Redjon, maker of Fastual</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content-center">
-            <p class="footer-brand">FASTUAL</p>
-            <div class="footer-links-center">
+<!-- SUPPORT -->
+    <section id="support" class="section">
+        <div class="container">
+            <div class="support-card">
+                <h2 class="fade-in-up">Support</h2>
+                <p class="fade-in-up delay-100">Questions about the app or found a bug? Get in touch.</p>
+                <a href="mailto:prengzi.redjon@gmail.com" class="btn fade-in-up delay-200">Contact Support</a>
+                <p class="email-text fade-in-up delay-200">prengzi.redjon@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-brand fade-in-up">FASTUAL</p>
+            <div class="footer-links fade-in-up">
                 <a href="../index.html">Redjon Prengzi</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
@@ -749,33 +200,12 @@
                 interested in joining, please contact me directly for access.</p>
             <div class="modal-actions">
                 <a href="mailto:prengzi.redjon@gmail.com" class="btn btn-full-width">Contact Directly</a>
-                <button onclick="closeAndroidModal()" class="modal-close">Close</button>
+                <button type="button" data-modal-close class="modal-close">Close</button>
             </div>
         </div>
     </div>
 
-    <script>
-        function showAndroidModal() {
-            const modal = document.getElementById('androidModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeAndroidModal() {
-            const modal = document.getElementById('androidModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        window.onclick = function (event) {
-            const modal = document.getElementById('androidModal');
-            if (event.target === modal) closeAndroidModal();
-        }
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') closeAndroidModal();
-        });
-    </script>
+    <script src="../assets/app.js?v=2" defer></script>
 
 </body>
 
