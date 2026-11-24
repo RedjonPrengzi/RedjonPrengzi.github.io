@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <!-- Shared bar links carry no page of their own; this meta is what a chat
+         unfurler shows on the bare link. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daily Bars">
+    <meta property="og:description" content="One hand-picked verse a day, broken down like studio notes.">
+    <meta property="og:image" content="https://redjonprengzi.github.io/dailyBars/app-screenshot.png">
+    <meta property="og:site_name" content="The Daily Bar by Redjon Prengzi">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Opening Daily Bars…</title>
+    <script>
+        // Shared bar links point at /dailyBars/bar/<id>/. There are no pages
+        // there — iOS opens the app via the apple-app-site-association file,
+        // and everyone else gets sent to the App Store instead of a dead end.
+        // Any other missing path goes back to the homepage.
+        var target = location.pathname.indexOf('/dailyBars/bar/') === 0
+            ? 'https://apps.apple.com/us/app/daily-bars/id6757107337'
+            : '/';
+        location.replace(target);
+    </script>
+</head>
+
+<body>
+    <!-- Only shown when JavaScript is disabled. -->
+    <p>
+        <a href="https://apps.apple.com/us/app/daily-bars/id6757107337">Get Daily Bars on the App Store</a>
+        ·
+        <a href="/">redjonprengzi.github.io</a>
+    </p>
+</body>
+
+</html>
